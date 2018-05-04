@@ -1,31 +1,288 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Mini Project DreamDragon - Yue</title>
-<base href="/">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2a2b33">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
-<meta name="description" content="summary activity fragment生命周期的一定要弄清楚!!!!!不然可能会坑 retrofit2 官网的代码和视频  寒假继续多看看这个 当时最后两天因为retrofit没用好还闹了很多bug烦的我要死QAQ 真的应该仔细研究仔细看看……. 当时碰到一个问题就是postman请求正常但是as中log一直是返回500 网上说可能是数据格式不匹配的原因 当时还和后台提了 把后台小哥吓">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="summary activity fragment生命周期的一定要弄清楚!!!!!不然可能会坑 retrofit2 官网的代码和视频  寒假继续多看看这个 当时最后两天因为retrofit没用好还闹了很多bug烦的我要死QAQ 真的应该仔细研究仔细看看……. 当时碰到一个问题就是postman请求正常但是as中log一直是返回500 网上说可能是数据格式不匹配的原因 当时还和后台提了 把后台小哥吓">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Mini Project DreamDragon">
 <meta property="og:url" content="http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/index.html">
 <meta property="og:site_name" content="Yue">
 <meta property="og:description" content="summary activity fragment生命周期的一定要弄清楚!!!!!不然可能会坑 retrofit2 官网的代码和视频  寒假继续多看看这个 当时最后两天因为retrofit没用好还闹了很多bug烦的我要死QAQ 真的应该仔细研究仔细看看……. 当时碰到一个问题就是postman请求正常但是as中log一直是返回500 网上说可能是数据格式不匹配的原因 当时还和后台提了 把后台小哥吓">
-<meta property="og:locale" content="Chinese">
 <meta property="og:updated_time" content="2018-05-03T16:10:22.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Mini Project DreamDragon">
 <meta name="twitter:description" content="summary activity fragment生命周期的一定要弄清楚!!!!!不然可能会坑 retrofit2 官网的代码和视频  寒假继续多看看这个 当时最后两天因为retrofit没用好还闹了很多bug烦的我要死QAQ 真的应该仔细研究仔细看看……. 当时碰到一个问题就是postman请求正常但是as中log一直是返回500 网上说可能是数据格式不匹配的原因 当时还和后台提了 把后台小哥吓">
-<link href="styles.7c718be35797443ae432.bundle.css" rel="stylesheet">
-
-<script src="config.a36bdff120fc361b84ff.js"></script>
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Mini Project DreamDragon</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
-<body>
-<is-root></is-root>
-<script src="inline.318b50c57b4eba3d437b.bundle.js"></script><script src="polyfills.364619ec5cf54423ac5b.bundle.js"></script><script src="main.9261fe3832a48fa6590f.bundle.js"></script>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2018/05/03/Annotation/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&text=Mini Project DreamDragon"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&is_video=false&description=Mini Project DreamDragon"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Mini Project DreamDragon&body=Check out this article: http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&name=Mini Project DreamDragon&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#summary"><span class="toc-number">1.</span> <span class="toc-text">summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experience"><span class="toc-number">2.</span> <span class="toc-text">Experience</span></a></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Mini Project DreamDragon
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yue</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-02-08T03:08:58.000Z" itemprop="datePublished">2018-02-08</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="summary"><a href="#summary" class="headerlink" title="summary"></a>summary</h1><ol>
+<li>activity fragment生命周期的一定要弄清楚!!!!!不然可能会坑</li>
+<li>retrofit2 官网的代码和视频</li>
+</ol>
+<p>寒假继续多看看这个 当时最后两天因为retrofit没用好还闹了很多bug烦的我要死QAQ 真的应该仔细研究仔细看看……. 当时碰到一个问题就是postman请求正常但是as中log一直是返回500 网上说可能是数据格式不匹配的原因 当时还和后台提了 把后台小哥吓的很受伤 后来我发现是自己网络请求写的有问题……=-=sorry</p>
+<ol>
+<li>圆形头像用的第三方</li>
+</ol>
+<p><code>ScrollView</code>这个很好用啊</p>
+<ol>
+<li>Banner控件 还有学长写的<code>CardBanner</code></li>
+</ol>
+<p>但因为梦境接龙返回的是故事的开头 不是图片 所以当时还是决定暂时不弄这个排行榜了 于是banner也没有写 首页空了一部分qaq是打算寒假的时候和后台商量这改改的</p>
+<p>如果要显示文字的话应该算是动画效果的运用了…..? 应该可以用viewpager实现 每个pager里自定义view ?</p>
+<ol>
+<li>封装了一个SharedPrederences工具类</li>
+<li>登录注册</li>
+</ol>
+<p>之前自己有写过所以还是有一点经验 可以做的很好看的 textinputlayout就可以做的很棒了</p>
+<ol>
+<li>RecycleView</li>
+</ol>
+<p>item之间的间距</p>
+<p>用一个辅助类 (设置间距会更美观一点) 横向</p>
+<ol>
+<li>数据传递</li>
+</ol>
+<p>activity之间 以及与fragment Intent Bundle</p>
+<h1 id="Experience"><a href="#Experience" class="headerlink" title="Experience"></a>Experience</h1><p><strong>1.29-2.5</strong> 很难得的经历吧 一个人 第一次 这样写一个小项目…. 开始之前我是很忐忑的 怕自己哪哪学的不踏实 哪哪不会写不会用 但真正开始了之后没有想象中可怕</p>
+<p>产品开始定的</p>
+<table>
+<thead>
+<tr>
+<th>1.29</th>
+<th>1.30-2.1</th>
+<th>2.2-2.3</th>
+<th>2.4-2.5</th>
+<th>2.6</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>确定产品需求设计初稿</td>
+<td>交互和视觉设计</td>
+<td>开发及视觉评审</td>
+<td>开发结束和测试</td>
+<td>总结</td>
+</tr>
+</tbody>
+</table>
+<p>然而 emmmmm…..就当他不存在吧233333</p>
+<p>​        哇最初的两三天其实我真的是有点一脸懵逼 我不知道设计什么时候给图 不知道如何和后台对接 然后就在那看retrofit官网 各种自己随便写一下登录注册界面 我也不知道自己前两天到底干了些啥……</p>
+<p>​        然后后来设计小哥哥给了图….按他的图写的真tm就是比我自己写的好看啊 叹气 看来我真的应该好好培养一下审美:) 然后就搞好了登录注册吧 印象中这个是比较早就好了的(记性不好星人) 然后就是写发起故事和首页的随机故事recycleview 发起故事的关键字的设计是问了下szy学长 当时按照设计小哥哥给的图 是想说上边一个recycleview button显示12345678然后下边显示关键字 弄好之后我啊总觉得怪怪的 很不舒服 不知道以前用过的那些app是咋写的这么好的噢 反正我自己的我看着很难受…..因为显示不全的原因我直接弄了两个并列的horizontalscrollview….丑到爆炸QAQ但是先完成了再说吧/笑哭</p>
+<p>​        其实最后两天我是过得有点难受的咧 有一点点吧 就是总有bug想害朕:) 那个时候自己一个人吃一个人住 很放肆啊 哥哥说他都不打电话给我 怕打扰我 我其实还好 就是有点怕写不完 一直拖到2.5晚上才基本完工 晚上很开心的给几个基友测试 其实我觉得还是不难看的至少比我之前做的…..嗯设计小哥哥确实设计的好看</p>
+<p>​        然后5号还是4号跟哥哥语音 坦白我这几天的心路历程…..哇不吐不快hhhhhhh不简单 也没有想象中难受 就是偶尔在回来的路上忧郁的望望天…..完工之后看我的代码又很奇怪我当时为啥要这么难受 其实没有什么特别的难点也…..过去了就是好过的233333</p>
+<p>​        晚上也有喝咖啡 我喝咖啡是很管用的…也有一次到五点多睡 但是第二天还挺困的所以后来就不会了 所以早上要求九点到一般我都八点半起然后十五分钟洗漱收东西十五分中奔跑在去工作室的路上hhhhhpmy你也是很牛逼的啊</p>
+<p>​        6号总结大会 还好还好 虽然被夸 但是其实我觉得也没有想象中那么好….惭愧脸</p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#summary"><span class="toc-number">1.</span> <span class="toc-text">summary</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Experience"><span class="toc-number">2.</span> <span class="toc-text">Experience</span></a></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&text=Mini Project DreamDragon"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&is_video=false&description=Mini Project DreamDragon"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Mini Project DreamDragon&body=Check out this article: http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&title=Mini Project DreamDragon"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/02/08/Mini-Project-DreamDragon/&name=Mini Project DreamDragon&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Share</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2018 Yue
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/archives/">Writing</a></li>
+         
+          <li><a href="/projects_url">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
