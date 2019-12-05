@@ -1,0 +1,1009 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="层次分析法 AHP ​        对于评价对象属性多样结构复杂的评价问题，难以简单采用定量或定性方法进行优化和评价。要建立多要素多层次的评价系统，采用定性与定量有机结合的方式分析复杂问题。 ​        美国运筹学家、匹兹堡大学教授T. L. 萨迪(T. L. Saaty)与20世纪70年代初提出了注明的AHP(Analytic Hierarchy Process, 解析递阶过程，意译为层">
+<meta property="og:type" content="article">
+<meta property="og:title" content="层次分析法 AHP">
+<meta property="og:url" content="http://yoursite.com/2019/12/05/层次分析法-AHP/index.html">
+<meta property="og:site_name" content="Yue">
+<meta property="og:description" content="层次分析法 AHP ​        对于评价对象属性多样结构复杂的评价问题，难以简单采用定量或定性方法进行优化和评价。要建立多要素多层次的评价系统，采用定性与定量有机结合的方式分析复杂问题。 ​        美国运筹学家、匹兹堡大学教授T. L. 萨迪(T. L. Saaty)与20世纪70年代初提出了注明的AHP(Analytic Hierarchy Process, 解析递阶过程，意译为层">
+<meta property="og:image" content="https://i.loli.net/2019/12/04/DWkL3PMeHZj7uOV.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/05/HOkIpQLe7wq1RhB.png">
+<meta property="og:image" content="https://i.loli.net/2019/12/05/XBASpDIl9jbsNgh.png">
+<meta property="og:updated_time" content="2019-12-05T17:25:21.187Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="层次分析法 AHP">
+<meta name="twitter:description" content="层次分析法 AHP ​        对于评价对象属性多样结构复杂的评价问题，难以简单采用定量或定性方法进行优化和评价。要建立多要素多层次的评价系统，采用定性与定量有机结合的方式分析复杂问题。 ​        美国运筹学家、匹兹堡大学教授T. L. 萨迪(T. L. Saaty)与20世纪70年代初提出了注明的AHP(Analytic Hierarchy Process, 解析递阶过程，意译为层">
+<meta name="twitter:image" content="https://i.loli.net/2019/12/04/DWkL3PMeHZj7uOV.png">
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>层次分析法 AHP</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+    
+    
+</head>
+
+<body>
+    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
+  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/posts/">Writing</a></li>
+         
+          <li><a href="http://github.com/sergodeeva">Projects</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        
+        <li><a class="icon" href="/2018/12/01/Input-Output-redirection-and-Regular-expression/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Previous post</span>
+      <span id="i-next" class="info" style="display:none;">Next post</span>
+      <span id="i-top" class="info" style="display:none;">Back to top</span>
+      <span id="i-share" class="info" style="display:none;">Share post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/05/层次分析法-AHP/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&text=层次分析法 AHP"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&is_video=false&description=层次分析法 AHP"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=层次分析法 AHP&body=Check out this article: http://yoursite.com/2019/12/05/层次分析法-AHP/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&name=层次分析法 AHP&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#层次分析法-AHP"><span class="toc-number">1.</span> <span class="toc-text">层次分析法 AHP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理与基本步骤"><span class="toc-number">1.1.</span> <span class="toc-text">原理与基本步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-建立评价模型"><span class="toc-number">1.1.1.</span> <span class="toc-text">1 建立评价模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-建立判断矩阵"><span class="toc-number">1.1.2.</span> <span class="toc-text">2 建立判断矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-重要度向量-W"><span class="toc-number">1.1.3.</span> <span class="toc-text">3 重要度向量$W$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-一致性检验"><span class="toc-number">1.1.4.</span> <span class="toc-text">4 一致性检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-层次总排序"><span class="toc-number">1.1.5.</span> <span class="toc-text">4 层次总排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算例"><span class="toc-number">1.2.</span> <span class="toc-text">算例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-完全相关结构"><span class="toc-number">1.2.1.</span> <span class="toc-text">1 完全相关结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-混合结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">2 混合结构</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index width mx-auto px2 my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        层次分析法 AHP
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yue</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2019-12-05T15:37:13.000Z" itemprop="datePublished">2019-12-05</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="层次分析法-AHP"><a href="#层次分析法-AHP" class="headerlink" title="层次分析法 AHP"></a>层次分析法 AHP</h1><blockquote>
+<p>​        对于评价对象属性多样结构复杂的评价问题，难以简单采用定量或定性方法进行优化和评价。要建立多要素多层次的评价系统，采用定性与定量有机结合的方式分析复杂问题。</p>
+<p>​        美国运筹学家、匹兹堡大学教授T. L. 萨迪(T. L. Saaty)与20世纪70年代初提出了注明的AHP(Analytic Hierarchy Process, 解析递阶过程，意译为层次分析)方法。</p>
+</blockquote>
+<h2 id="原理与基本步骤"><a href="#原理与基本步骤" class="headerlink" title="原理与基本步骤"></a>原理与基本步骤</h2><p><strong>AHP方法把复杂问题分解成各个组成因素，又将这些因素按支配关系分组形成递阶层次结构，通过两两比较的方式确定各层次中各因素的相对重要性，最后进行备选方案的总重要性排序。</strong></p>
+<h3 id="1-建立评价模型"><a href="#1-建立评价模型" class="headerlink" title="1 建立评价模型"></a>1 建立评价模型</h3><p><strong>分析评价系统中各基本要素之间的关系，建立系统的递阶层次结构</strong></p>
+<p>1.确定层次</p>
+<ul>
+<li><p>最高层：分析问题的预定目标或期望实现的理想结果，是系统评价的最高准则。也称目标层。</p>
+</li>
+<li><p>中间层：包括为实现目标所涉及的中间环节，可由若干个层次组成，包括所需考虑的准则、以及其所属子准则。也称准则层。</p>
+</li>
+<li>最底层：为实现目标提供的可选择具体方案与措施等。也称方案层。</li>
+</ul>
+<p>2.结构形式</p>
+<ul>
+<li><p>完全相关结构：每层要素完全相关</p>
+</li>
+<li><p>完全独立结构：树形结构</p>
+</li>
+<li>混合结构：带有子层次的混合结构。子要素只与其亲要素层相关</li>
+</ul>
+<p>3.建立递阶层次结构</p>
+<ul>
+<li>分解法</li>
+<li>解释结构模型化方法（ISM）</li>
+</ul>
+<p><strong>每一层次中各要素所支配的要素一般不超过9个。</strong></p>
+<h3 id="2-建立判断矩阵"><a href="#2-建立判断矩阵" class="headerlink" title="2 建立判断矩阵"></a>2 建立判断矩阵</h3><p><strong>对同一层次的各要素关于上一层次中的要素的重要性进行两两对比，构造两两比较判断矩阵。</strong></p>
+<p>1.构造判断矩阵</p>
+<p>根据专家意见或问卷调查等方式设置影响因素权重数据，构建各层次判断矩阵</p>
+<p>判断矩阵标度定义见下表</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">标度</th>
+<th style="text-align:center">含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">两个因素相比具有同等重要性</td>
+</tr>
+<tr>
+<td style="text-align:center">3</td>
+<td style="text-align:center">两个因素相比，前者比后者稍重要</td>
+</tr>
+<tr>
+<td style="text-align:center">5</td>
+<td style="text-align:center">表示两个因素对比，前者比后者明显重要</td>
+</tr>
+<tr>
+<td style="text-align:center">7</td>
+<td style="text-align:center">表示两个因素对比，前者比后者强烈重要</td>
+</tr>
+<tr>
+<td style="text-align:center">9</td>
+<td style="text-align:center">表示两个因素对比，前者比后者极度重要</td>
+</tr>
+<tr>
+<td style="text-align:center">2,4,6,8</td>
+<td style="text-align:center">表示介于两个因素之间的重要性</td>
+</tr>
+<tr>
+<td style="text-align:center">倒数</td>
+<td style="text-align:center">表示两个因素对比，后者比前者的重要性标度</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>完全相关结构模型</li>
+</ul>
+<p>对于第$k$层的$m$个元素，分别相对于第$k-1$层的$n$个元素都构造判断矩阵</p>
+<ul>
+<li>带有子层次的混合结构</li>
+</ul>
+<p>对于第第$k$层的$m$个元素，分别只对第$k-1$层其对应的第$n$个元素构造判断矩阵</p>
+<p>2.判断矩阵的性质</p>
+<p>$A$为正互反矩阵——  $0&lt;a_{ij}\leq9,\quad a_{ij}=1,\quad a_{ji}=\frac{1}{a_{ij}}$</p>
+<p>$A$为一致性矩阵——  $a_{ik}·a_{kj}=a_{ij}$  </p>
+<p>3.问题处理</p>
+<ul>
+<li><p>选择1~9之间的整数及其倒数作为$a_{ij}$的取值的原因是它符合人们进行比较判断时的心理习惯</p>
+</li>
+<li><p>两两比较的次数应为$\frac{n(n-1)}{2}$ 这样可以避免判断误差的传递和扩散</p>
+</li>
+<li>遇到定量指标（物理量、经济量等）时，除按原方法构造判断矩阵外，可用具体评价数值直接相比，这时得到的矩阵为定义在正实数集合上的互反矩阵</li>
+</ul>
+<h3 id="3-重要度向量-W"><a href="#3-重要度向量-W" class="headerlink" title="3 重要度向量$W$"></a>3 重要度向量$W$</h3><p>$W=(W_1,W_2,…W_n)^T$</p>
+<ul>
+<li>求和法（算数平均法）</li>
+</ul>
+<p>$W_i=\frac1n \sum_{j=1}^n \frac{a_{ij}}{\sum_{k=1}^n a_{kj}} ,\quad i=1,2,…n$</p>
+<p>$A$的元素按列归一化，然后将各列相加，将相加后的向量除以$n$即得权重向量</p>
+<ul>
+<li>方根法（几何平均法）</li>
+</ul>
+<p>$W_i=\frac{(\prod_{j=1}^n a_{ij})^{\frac 1 n}}{\sum_{i=1}^n(\prod_{j=1}^n a_{ij})^{\frac 1 n}},\quad i=1,2,…n$</p>
+<p>$A$的元素按行相乘得一新列向量，将其每个分量开$n$次方，将所得列向量归一化即为权重向量</p>
+<ul>
+<li>特征根法</li>
+</ul>
+<p>$AW=\lambda_{max}W$</p>
+<p>由正矩阵的Perron定理可知，$\lambda_{max}$存在且唯一，$W$的分量均为正分量，可以用幂法求出$\lambda_{max}$及相应的特征向量$W$</p>
+<ul>
+<li><p>最小二乘法</p>
+<ul>
+<li><p>普通最小二乘法  </p>
+<p>$\sum_{1\leq i&lt;j \leq n}(a_{ij}-\frac{W_i}{W_j})^2 \to min$</p>
+</li>
+<li><p>对数最小二乘法</p>
+<p>$\sum_{1\leq i&lt;j \leq n}[lga_{ij}-lg(\frac{W_i}{W_j})]^2 \to min$</p>
+</li>
+</ul>
+</li>
+</ul>
+<p>用拟合方法确定权重向量$W$使残差平方和为最小，这实际是一类非线性优化问题</p>
+<h3 id="4-一致性检验"><a href="#4-一致性检验" class="headerlink" title="4 一致性检验"></a>4 一致性检验</h3><p><strong>对于构造好的判断矩阵进行一致性检验。</strong></p>
+<p>1.一致性指标$C.I.$</p>
+<p>计算衡量一个成对比判断矩阵不一致程度的一致性指标以及特征根最大值</p>
+<p>$C.I.=\frac{\lambda_{max} -n}{n-1}$</p>
+<p>$\lambda_{max} \approx \frac 1n \sum_{i=1}^{n}\frac{(AW)_i}{W_i}=\frac1n \sum_{i=1}^{n}\frac{\sum_{j=1}^n a_{ij}W_j}{W_i}$</p>
+<p>2.平均随机一致性指标$R.I.$ (Random Inden R. I.)</p>
+<p>$R.I.$ 是同阶随机判断矩阵的一致性指标的平均值，只与矩阵阶数有关，使用平均随机一致性指标在一定程度上能够克服一致性判断指标随n增大而明显增大的弊端。</p>
+<p>$R.I.$ 是这样得到的：对于固定的$n$,随机构造成对比较阵$A$, 其中$a_{ij}$是从$1,2,…,9\quad \frac12,\frac13,…,\frac19$中随机抽取的。这样的$A$是不一致的, 取充分大的样本得到$A$的最大特征值的平均值</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">n</th>
+<th style="text-align:center">1</th>
+<th>2</th>
+<th style="text-align:center">3</th>
+<th style="text-align:center">4</th>
+<th style="text-align:center">5</th>
+<th style="text-align:center">6</th>
+<th style="text-align:center">7</th>
+<th style="text-align:center">8</th>
+<th style="text-align:center">9</th>
+<th style="text-align:center">10</th>
+<th style="text-align:center">11</th>
+<th style="text-align:center">12</th>
+<th style="text-align:center">13</th>
+<th style="text-align:center">14</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">R. I.</td>
+<td style="text-align:center">0</td>
+<td>0</td>
+<td style="text-align:center">0.52</td>
+<td style="text-align:center">0.89</td>
+<td style="text-align:center">1.12</td>
+<td style="text-align:center">1.26</td>
+<td style="text-align:center">1.36</td>
+<td style="text-align:center">1.41</td>
+<td style="text-align:center">1.46</td>
+<td style="text-align:center">1.49</td>
+<td style="text-align:center">1.52</td>
+<td style="text-align:center">1.54</td>
+<td style="text-align:center">1.56</td>
+<td style="text-align:center">1.58</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>3.一致性比例$C.R.$ (Consistency Ratio, C. R. )</p>
+<p>$C.R. =\frac {C.I.}{R.I.}$</p>
+<p>当$C.R.&lt;0.1$时，判定成对比矩阵具有满意的一致性，或成为其不一致程度是可以接受的，否则不具有满意的一致性，需要调整成对比矩阵直到达到满意度为止</p>
+<p><strong>二阶判断矩阵为一致性矩阵，本身就具备完全一致性，因此不必判断其一致性</strong></p>
+<h3 id="4-层次总排序"><a href="#4-层次总排序" class="headerlink" title="4 层次总排序"></a>4 层次总排序</h3><p><strong>层次总排序是指每一个判断矩阵各因素对于最高层目标层的相对权重。这一权重的计算是至上而下逐层递进的</strong></p>
+<p>第二层$B$层的单排序结果就是总排序结果，但是对于 $C$ 层或$D$层而言， 都需要根据其上一层的权重值来计算其相对于总目标的权重。 </p>
+<p>假设已经得出第$k-1$层$m$个元素相对于总目标的权重为$W^{(k-1)} =(q^{(1)},q^{(2)},…,q^{(m)})^T$，并且已知第$k$层$n$个元素相对于第$k-1$层的权重$p^{(k)}=(p^{(1)},p^{(2)},…,p^{(n)})^T$，那么，当第$ k$ 层第 $i$ 个元素为第$ k-1 $层的第 $j$ 个元素的子元素时， 其相对于总目标的权重为$p^{(i)}q^{(j)}$，那么计算第$ k$ 层 $n$ 个元素相对于总目标的权重的计算公式为</p>
+<p>$W^{(k)}=(p^{(i)}q^{(m)},…)^T, \quad i=1,2,…n\quad j=1,2,…m \quad$ 第$k$层的$i$元素为第$k-1$层的$j$元素的子元素</p>
+<p>由此得到第$k-1$层相对于目标层的总权重</p>
+<h2 id="算例"><a href="#算例" class="headerlink" title="算例"></a>算例</h2><h3 id="1-完全相关结构"><a href="#1-完全相关结构" class="headerlink" title="1 完全相关结构"></a>1 完全相关结构</h3><p>以投资效果评价结构模型为例</p>
+<p><img src="https://i.loli.net/2019/12/04/DWkL3PMeHZj7uOV.png" alt="图1投资评价模型.png" style="zoom:50%;"></p>
+<p>1.构建判断矩阵</p>
+<p>① $A$层</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$A$</th>
+<th style="text-align:center">$B_1$</th>
+<th style="text-align:center">$B_2$</th>
+<th style="text-align:center">$B_3$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$B_1$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">$\frac13$</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_2$</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_3$</td>
+<td style="text-align:center">$\frac12$</td>
+<td style="text-align:center">$\frac15$</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>② $B$层</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_1$</th>
+<th style="text-align:center">$C_1$</th>
+<th style="text-align:center">$C_2$</th>
+<th style="text-align:center">$C_3$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">$\frac13$</td>
+<td style="text-align:center">$\frac15$</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">$\frac13$</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_3$</td>
+<td style="text-align:center">5</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_2$</th>
+<th style="text-align:center">$C_1$</th>
+<th style="text-align:center">$C_2$</th>
+<th style="text-align:center">$C_3$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+<td style="text-align:center">7</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">$\frac12$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_3$</td>
+<td style="text-align:center">$\frac17$</td>
+<td style="text-align:center">$\frac15$</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_3$</th>
+<th style="text-align:center">$C_1$</th>
+<th style="text-align:center">$C_2$</th>
+<th style="text-align:center">$C_3$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">$\frac17$</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">$\frac13$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">$\frac19$</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_3$</td>
+<td style="text-align:center">7</td>
+<td style="text-align:center">9</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>2.一致性检验</p>
+<p>① $A$层</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$A$</th>
+<th style="text-align:center">$W_i$</th>
+<th style="text-align:center">$W_i^0$</th>
+<th style="text-align:center">$\lambda_{mi}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$B_1$</td>
+<td style="text-align:center">0.874</td>
+<td style="text-align:center">0.230</td>
+<td style="text-align:center">3.002</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_2$</td>
+<td style="text-align:center">2.466</td>
+<td style="text-align:center">0.648</td>
+<td style="text-align:center">3.004</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_3$</td>
+<td style="text-align:center">0.464</td>
+<td style="text-align:center">0.122</td>
+<td style="text-align:center">3.005</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$W1=((1\times \frac13 \times 2)^{\frac13}, (3\times1\times5)^{\frac13},(\frac12\times \frac15 \times1)^{\frac13})^T=(0.874,2.466,0.464)^T$</p>
+<p>$W_i=(\frac{0.874}{0.874+2.466+0.464},\frac{2.466}{0.874+2.466+0.464},\frac{0.464}{0.874+2.466+0.464})^T=(0.230,0.648,0.122)^T$</p>
+<p>$\lambda_{mi}=(\frac{1\times0.874+\frac13 \times2.466+2\times0.464}{0.874},\frac{3\times0.874+1 \times2.466+5\times0.464}{2.466},\frac{\frac12\times0.874+\frac15 \times2.466+1\times0.464}{0.464})^T=(3.002,3.004,3.005)^T$</p>
+<p>$\lambda_{max}\approx \frac13(3.002+3.004+3.005)=3.004$</p>
+<p>$C.I.=\frac{3.004-3}{3-1}=0.002&lt;0.1$</p>
+<p>② $B$层 （具体计算步骤同$A$层）</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_1$</th>
+<th style="text-align:center">$W_i$</th>
+<th style="text-align:center">$W_i^0$</th>
+<th style="text-align:center">$\lambda_{mi}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">0.406</td>
+<td style="text-align:center">0.105</td>
+<td style="text-align:center">3.036</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">1.000</td>
+<td style="text-align:center">0.258</td>
+<td style="text-align:center">3.040</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_3$</td>
+<td style="text-align:center">2.466</td>
+<td style="text-align:center">0.637</td>
+<td style="text-align:center">3.040</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$\lambda_{max}\approx \frac13(3.036+3.040+3.040)=3.039$</p>
+<p>$C.I.=\frac{3.039-3}{3-1}=0.02&lt;0.1$</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_2$</th>
+<th style="text-align:center">$W_i$</th>
+<th style="text-align:center">$W_i^0$</th>
+<th style="text-align:center">$\lambda_{mi}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">2.410</td>
+<td style="text-align:center">0.592</td>
+<td style="text-align:center">3.015</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">1.375</td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center">3.016</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_3$</td>
+<td style="text-align:center">0.306</td>
+<td style="text-align:center">0.075</td>
+<td style="text-align:center">3.012</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$\lambda_{max}\approx \frac13(3.015+3.016+3.012)=3.014$</p>
+<p>$C.I.=\frac{3.014-3}{3-1}=0.007&lt;0.1$</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_3$</th>
+<th style="text-align:center">$W_i$</th>
+<th style="text-align:center">$W_i$</th>
+<th style="text-align:center">$\lambda_{mi}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">0.754</td>
+<td style="text-align:center">0.149</td>
+<td style="text-align:center">3.079</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center">0.066</td>
+<td style="text-align:center">3.082</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_3$</td>
+<td style="text-align:center">3.979</td>
+<td style="text-align:center">0.785</td>
+<td style="text-align:center">3.080</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$\lambda_{max}\approx \frac13(3.079+3.082+3.080)=3.08$</p>
+<p>$C.I.=\frac{3.004-3}{3-1}=0.002&lt;0.1$</p>
+<p>3.方案总重要度计算</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">$B_1$</th>
+<th style="text-align:center">$B_2$</th>
+<th style="text-align:center">$B_3$</th>
+<th style="text-align:center">$C_j=\sum_{i=1}^{3}b_iC_j^i$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.230</td>
+<td style="text-align:center">0.648</td>
+<td style="text-align:center">0.122</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">0.105</td>
+<td style="text-align:center">0.592</td>
+<td style="text-align:center">0.149</td>
+<td style="text-align:center">0.426</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">0.258</td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center">0.066</td>
+<td style="text-align:center">0.283</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_3$</td>
+<td style="text-align:center">0.637</td>
+<td style="text-align:center">0.075</td>
+<td style="text-align:center">0.785</td>
+<td style="text-align:center">0.291</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>由此得到方案层的权重为$W^{(C)}=(0.426,0.283,0.291)^T$</p>
+<p>结论：优劣顺序为：$C_1&gt;C_3&gt;C_2$ , 很明显 $C_1$为最优方案</p>
+<h3 id="2-混合结构"><a href="#2-混合结构" class="headerlink" title="2 混合结构"></a>2 混合结构</h3><p>如过河收益评价指标体系：</p>
+<p><img src="https://i.loli.net/2019/12/05/HOkIpQLe7wq1RhB.png" alt="图2过河收益评价.png" style="zoom:50%;"></p>
+<p>以一简单算例为例计算，无具体实际含义</p>
+<p><img src="https://i.loli.net/2019/12/05/XBASpDIl9jbsNgh.png" alt="图4.png" style="zoom:50%;"></p>
+<p>1.构造判断矩阵</p>
+<p>① $A$层</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$A$</th>
+<th style="text-align:center">$B_1$</th>
+<th style="text-align:center">$B_2$</th>
+<th style="text-align:center">$B_3$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$B_1$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_2$</td>
+<td style="text-align:center">$\frac13$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">3</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_3$</td>
+<td style="text-align:center">$\frac15$</td>
+<td style="text-align:center">$\frac13$</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>② $B$层</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_1$</th>
+<th style="text-align:center">$C_1$</th>
+<th style="text-align:center">$C_2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">$\frac12$</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_2$</th>
+<th style="text-align:center">$C_1$</th>
+<th style="text-align:center">$C_2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">2</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">$\frac12$</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$B_3$</th>
+<th style="text-align:center">$C_1$</th>
+<th style="text-align:center">$C_2$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">5</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">$\frac15$</td>
+<td style="text-align:center">1</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>2.一致性检验</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">$A$</th>
+<th style="text-align:center">$W_i$</th>
+<th style="text-align:center">$W_i^0$</th>
+<th style="text-align:center">$\lambda_{mi}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">$B_1$</td>
+<td style="text-align:center">2.466</td>
+<td style="text-align:center">0.635</td>
+<td style="text-align:center">3.308</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_2$</td>
+<td style="text-align:center">1.000</td>
+<td style="text-align:center">0.260</td>
+<td style="text-align:center">3.037</td>
+</tr>
+<tr>
+<td style="text-align:center">$B_3$</td>
+<td style="text-align:center">0.405</td>
+<td style="text-align:center">0.105</td>
+<td style="text-align:center">3.041</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">1.414</td>
+<td style="text-align:center">0.667</td>
+<td style="text-align:center">2.089</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_2$</td>
+<td style="text-align:center">0.707</td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center">2.000</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_3$</td>
+<td style="text-align:center">0.707</td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center">2.000</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_4$</td>
+<td style="text-align:center">1.414</td>
+<td style="text-align:center">0.667</td>
+<td style="text-align:center">2.089</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_5$</td>
+<td style="text-align:center">2.236</td>
+<td style="text-align:center">0.833</td>
+<td style="text-align:center">1.996</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_6$</td>
+<td style="text-align:center">0.447</td>
+<td style="text-align:center">0.167</td>
+<td style="text-align:center">2.004</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$\lambda_{maxA}=3.039$</p>
+<p>$C.R.=\frac{C.I.}{R.I.}=\frac{0.0195}{0.52}=0.0375&lt;0.1$</p>
+<p>矩阵$A$具有满意的一致性</p>
+<p>$\lambda_{maxB_1}=2.045$</p>
+<p>$\lambda_{maxB_2}=2.045$</p>
+<p>$\lambda_{maxB_3}=2.000$</p>
+<p>$B_1,B_2,B_3$为二阶矩阵不必判断其一致性</p>
+<p>3.方案总重要度</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center"></th>
+<th style="text-align:center">$B_1$</th>
+<th style="text-align:center">$B_2$</th>
+<th style="text-align:center">$B_3$</th>
+<th style="text-align:center">各指标相对于总目标的权重</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.635</td>
+<td style="text-align:center">0.260</td>
+<td style="text-align:center">0.105</td>
+<td style="text-align:center"></td>
+</tr>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">0.667</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.424</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.211</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.333</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.087</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.667</td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.173</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.833</td>
+<td style="text-align:center">0.087</td>
+</tr>
+<tr>
+<td style="text-align:center">$C_1$</td>
+<td style="text-align:center"></td>
+<td style="text-align:center"></td>
+<td style="text-align:center">0.167</td>
+<td style="text-align:center">0.018</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>$\therefore W_C=(0.424,0.211,0.087,0.173,0.087,0.018)^T$ </p>
+<p>因此$C$层关于总目标的权重排序为$C_1&gt;C_2&gt; C_4 &gt; C_3 = C_5&gt; C_6 $</p>
+<p>(如有错误 作者是🐷)</p>
+<p>参考资料：</p>
+<p>[1] 汪应洛.系统工程.机械工业出版社</p>
+<p>[2] <a href="https://wiki.mbalib.com/wiki/%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95" target="_blank" rel="noopener">层次分析法-MBA</a></p>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/posts/">Writing</a></li>
+         
+          <li><a href="http://github.com/sergodeeva">Projects</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#层次分析法-AHP"><span class="toc-number">1.</span> <span class="toc-text">层次分析法 AHP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理与基本步骤"><span class="toc-number">1.1.</span> <span class="toc-text">原理与基本步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-建立评价模型"><span class="toc-number">1.1.1.</span> <span class="toc-text">1 建立评价模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-建立判断矩阵"><span class="toc-number">1.1.2.</span> <span class="toc-text">2 建立判断矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-重要度向量-W"><span class="toc-number">1.1.3.</span> <span class="toc-text">3 重要度向量$W$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-一致性检验"><span class="toc-number">1.1.4.</span> <span class="toc-text">4 一致性检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-层次总排序"><span class="toc-number">1.1.5.</span> <span class="toc-text">4 层次总排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算例"><span class="toc-number">1.2.</span> <span class="toc-text">算例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-完全相关结构"><span class="toc-number">1.2.1.</span> <span class="toc-text">1 完全相关结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-混合结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">2 混合结构</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/05/层次分析法-AHP/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&text=层次分析法 AHP"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&is_video=false&description=层次分析法 AHP"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=层次分析法 AHP&body=Check out this article: http://yoursite.com/2019/12/05/层次分析法-AHP/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&name=层次分析法 AHP&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+      <ul>
+        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
+        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
+        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
+        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
+      </ul>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Yue
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Home</a></li>
+         
+          <li><a href="/about/">About</a></li>
+         
+          <li><a href="/posts/">Writing</a></li>
+         
+          <li><a href="http://github.com/sergodeeva">Projects</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
+<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
+<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+        ga('create', 'UA-37473492-6', 'auto');
+        ga('send', 'pageview');
+    </script>
+
+
+
