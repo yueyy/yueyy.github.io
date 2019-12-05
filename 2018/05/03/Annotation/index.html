@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- so meta -->
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
@@ -44,14 +44,13 @@
     
       <link rel="stylesheet" href="/css/rtl.css">
     
-    <!-- rss -->
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
@@ -157,6 +156,7 @@
 <p>但是注解要正常工作 还需要<strong>元注解</strong></p>
 <h2 id="Meta-Annotation"><a href="#Meta-Annotation" class="headerlink" title="Meta Annotation"></a>Meta Annotation</h2><p>元注解是可以注解到注解上的注解。它是一种基本注解，但它能够应用到其他注解上。</p>
 <p>Annotation Type</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -187,11 +187,13 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="Documented"><a href="#Documented" class="headerlink" title="@Documented"></a>@Documented</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Documented</span></span><br><span class="line"><span class="variable">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="variable">@Target</span>(ElementType.ANNOTATION_TYPE)</span><br><span class="line">public <span class="variable">@interface</span> Documented &#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>@Documented</strong>表示拥有该注解的元素可通过javadoc此类的工具进行文档化。</p>
 <p>该类型应用于注解那些影响客户使用带注释(comment)的元素声明的类型。如果类型声明是用Documented来注解的，这种类型的注解被作为被标注的程序成员的公共API。</p>
 <p>例如，上面源码<code>@Retention</code>的定义中有一行<code>@Documented</code>，意思是指当前注解的元素会被javadoc工具进行文档化，那么在查看Java API文档时可查看当该注解元素。</p>
 <h3 id="Retention"><a href="#Retention" class="headerlink" title="@Retention"></a>@Retention</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Documented</span></span><br><span class="line"><span class="variable">@Retention</span>((RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="variable">@Target</span>(ElementType.ANNOTATION_TYPE)</span><br><span class="line">public <span class="variable">@interface</span> Retention &#123;</span><br><span class="line">    RetentionPolicy value();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -214,10 +216,12 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>@Retention</strong>相当于一个时间戳 指明了标签张贴的时间周期，描述了注解的生命周期。</p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Retention</span>(RetentionPolicy。RUNTIME)</span><br><span class="line">public <span class="variable">@interface</span> TestAnnotation&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="Target"><a href="#Target" class="headerlink" title="@Target"></a>@Target</h3><figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Documented</span></span><br><span class="line"><span class="variable">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line"><span class="variable">@Target</span>(ElementType.ANNOTATION_TYPE)</span><br><span class="line">public <span class="variable">@interface</span> Target &#123;</span><br><span class="line">    <span class="selector-tag">ElementType</span><span class="selector-attr">[]</span> <span class="selector-tag">value</span>();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>@Target</strong>指定了注解运用的地方，限定了运用的场景</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -268,6 +272,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>若没有<code>@Target</code>元注解则默认可以适用所有的程序元素。</p>
 <p>多个值使用需加上<code>{}</code>并用<code>,</code>隔开</p>
 <figure class="highlight fortran"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">Target</span>(<span class="keyword">value</span>=&#123;CONSTRUCTOR, FIELD, LOCAL_VARIABLE, METHOD, PACKAGE, <span class="keyword">PARAMETER</span>, <span class="keyword">TYPE</span>&#125;)</span><br></pre></td></tr></table></figure>
@@ -305,6 +310,7 @@
 <p><strong>@SuppressWarnnings</strong>用于有选择的关闭编译器对类、方法、成员变量、变量初始化的警告。</p>
 <p>可适合用于除注解类型声明和包名之外的所有元素，仅仅保留在java源文件中。</p>
 <p>内部String数组主要接收值</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -343,13 +349,15 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h3 id="SafeVarargs"><a href="#SafeVarargs" class="headerlink" title="@SafeVarargs"></a>@SafeVarargs</h3><p><strong>@SafeVarargs</strong> since Java1.7 参数安全类型注解。目的是处理可变长参数中的泛型 此注解告诉编译器：在可变参数中的泛型是类型安全的</p>
 <p>因为泛型的数据类型是运行时才确定的，因此把泛型存储到数组中时，编译器在编译阶段无法检查数据类型是否匹配，会给出警告信息：存在可能的”堆污染“（Heap Pollution） 如果泛型的真实数据类型无法和参数数组的类型匹配 会导致ClassCastException异常 因此在可变长参数中使用泛型时，编译器都会给出警告信息</p>
 <h3 id="FunctionalInterface"><a href="#FunctionalInterface" class="headerlink" title="@FunctionalInterface"></a>@FunctionalInterface</h3><p><strong>@FunctionalInterface</strong> since Java1.8 函数式接口注解。函数式接口就是一个具有一个方法的普通接口。</p>
 <p>线程开发中常用的Runnable就是典型的函数式接口</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@FunctionalInterface</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Runnable</span> </span>&#123;</span><br><span class="line">    <span class="comment">/**</span></span><br><span class="line"><span class="comment">     * When an object implementing interface &lt;code&gt;Runnable&lt;/code&gt; is used</span></span><br><span class="line"><span class="comment">     * to create a thread, starting the thread causes the object's</span></span><br><span class="line"><span class="comment">     * &lt;code&gt;run&lt;/code&gt; method to be called in that separately executing</span></span><br><span class="line"><span class="comment">     * thread.</span></span><br><span class="line"><span class="comment">     * &lt;p&gt;</span></span><br><span class="line"><span class="comment">     * The general contract of the method &lt;code&gt;run&lt;/code&gt; is that it may</span></span><br><span class="line"><span class="comment">     * take any action whatsoever.</span></span><br><span class="line"><span class="comment">     *</span></span><br><span class="line"><span class="comment">     * <span class="doctag">@see</span>     java.lang.Thread#run()</span></span><br><span class="line"><span class="comment">     */</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">run</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>函数式接口标记的作用是可以很容易转换为Lambda表达式</p>
-<h3 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h3><table>
+<h3 id="Comparison"><a href="#Comparison" class="headerlink" title="Comparison"></a>Comparison</h3><div class="table-container">
+<table>
 <thead>
 <tr>
 <th>内建注解</th>
@@ -375,6 +383,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <h2 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h2><p><strong>example</strong></p>
 <figure class="highlight less"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">@Documented</span></span><br><span class="line"><span class="variable">@Target</span>(ElementType.METHOD)</span><br><span class="line"><span class="variable">@Inherited</span></span><br><span class="line"><span class="variable">@Retention</span>(RetentionPolicy.RUNTIME)</span><br><span class="line">public <span class="variable">@interface</span> TestAnnotation&#123;</span><br><span class="line">    <span class="selector-tag">String</span> <span class="selector-tag">username</span>();</span><br><span class="line">    <span class="selector-tag">String</span> <span class="selector-tag">password</span>()；</span><br><span class="line">    <span class="selector-tag">int</span> <span class="selector-tag">id</span>() <span class="selector-tag">default</span> <span class="selector-tag">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><strong>规则</strong></p>
@@ -391,6 +400,7 @@
 <p>若TestAnnotation注解只有一个属性，则可不写成员变量名，直接赋值</p>
 <figure class="highlight kotlin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">@TestAnnotation(1)</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Test</span></span>&#123;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="Theory"><a href="#Theory" class="headerlink" title="Theory"></a>Theory</h2><p><code>Annotation</code>其实是一种接口。Java所有注解都继承了<code>Annotation</code>接口。通过Java的<strong>反射</strong>机制相关的API来访问Annotation信息。反射类位于包java.lang.reflect，其中有一个接口<code>AnnotatedElement</code></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -422,6 +432,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>首先通过<code>Class</code>对象的<code>isAnnotationPresent()</code>判断它是否应用了某个注解，然后通过<code>getAnnotation()</code>来获取<code>Annotation</code>对象 或者是通过<code>getAnnotations()</code>方法。前者返回指定类型的注解 后者返回注解到这个元素上的所有注解。如果获取到的<code>Annotation</code>不为null，则就可以调用它们的属性方法了。</p>
 <p><strong>一个注解要在运行时被成功提取，那么必须要@Retention(RetentionPolicy.RUNTIME)</strong></p>
 <p>ps：因为注解的提取需要借助于Java反射技术 而反射比较慢 因此使用注解时需要考虑时间成本</p>
@@ -459,7 +470,7 @@
 </ul>
 <p>拓展阅读：</p>
 <ul>
-<li><a href="https://www.jianshu.com/p/28edf5352b63" target="_blank" rel="noopener">Java:Annotation(注解)–原理到案例</a></li>
+<li><a href="https://www.jianshu.com/p/28edf5352b63" target="_blank" rel="noopener">Java:Annotation(注解)—原理到案例</a></li>
 <li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-java8annotation/index.html" target="_blank" rel="noopener">Java 8 Annotation 新特性在软件质量和开发效率方面的提升</a></li>
 <li><a href="https://juejin.im/post/5a9698a8f265da4e7d6077bc" target="_blank" rel="noopener">在Android中优雅地使用注解</a></li>
 <li><a href="https://joyrun.github.io/2016/07/19/AptHelloWorld/" target="_blank" rel="noopener">Android APT（编译时代码生成）最佳实践</a></li>
@@ -541,6 +552,21 @@
   </div>
 </footer>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
 <!-- styles -->

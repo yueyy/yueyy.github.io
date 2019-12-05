@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- so meta -->
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
@@ -42,14 +42,13 @@
     
       <link rel="stylesheet" href="/css/rtl.css">
     
-    <!-- rss -->
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
@@ -158,11 +157,7 @@
 <p>对象连名都没有，没法直接访问它。我们只能通过对象引用来间接访问对象。</p>
 <blockquote>
 <p>Java中都是通过引用来操纵对象的。</p>
-</blockquote>
-<blockquote>
 <p>Java对象和引用的关系可以说是互相关联，却又彼此独立。彼此独立主要表现在：引用是可以改变的，它可以指向别的对象。</p>
-</blockquote>
-<blockquote>
 <p>从存储空间上来说，对象和引用也是独立的，它们存储在不同的地方，对象一般存储在堆中，而引用存储在速度更快的堆栈中。 </p>
 </blockquote>
 <p>对象好比是一只很大的气球，引用变量则是一根可以用来系气球的绳子。</p>
@@ -202,11 +197,7 @@
 <p>避免多重继承的复杂性和低效性。</p>
 <h2 id="break-continue-return"><a href="#break-continue-return" class="headerlink" title="break||continue||return"></a>break||continue||return</h2><blockquote>
 <p>break 用于完全结束一个循环，跳出循环体。不管哪种循环，一旦在循环体中遇到break，系统将完全结束掉该循环。</p>
-</blockquote>
-<blockquote>
 <p>continue只是忽略本次循环剩下的语句,立即开始下次循环，并不会终止循环;而break则是完全终止循环。</p>
-</blockquote>
-<blockquote>
 <p>return不是专门拿来结束循环的，return的功能是结束一个 方法 。当一个方法执行到一个return语句时，这个方法将会给结束。</p>
 </blockquote>
 <h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h1><p>封装了由一系列语句所描述的运算</p>
@@ -356,8 +347,6 @@
 <figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> SuperType(construction parameters)</span><br><span class="line">&#123;</span><br><span class="line">    inner <span class="class"><span class="keyword">class</span> <span class="title">methods</span> <span class="title">and</span> <span class="title">data</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>SuperType可以是接口（ActionListener），内部类需要实现这个接口;</p>
-</blockquote>
-<blockquote>
 <p>SuperType可以是一个类，内部类就要扩展他</p>
 </blockquote>
 <p>由于构造器名字必须与类名相同，而匿名类没有类名，所以匿名类无构造器。只有将构造器参数传递给超类构造器。</p>
@@ -446,6 +435,21 @@
   </div>
 </footer>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
 <!-- styles -->

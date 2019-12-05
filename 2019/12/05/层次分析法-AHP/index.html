@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- so meta -->
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
@@ -46,14 +46,13 @@
     
       <link rel="stylesheet" href="/css/rtl.css">
     
-    <!-- rss -->
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
@@ -177,7 +176,7 @@
 </ol>
 <p>根据专家意见或问卷调查等方式设置影响因素权重数据，构建各层次判断矩阵</p>
 <p>判断矩阵标度定义见下表</p>
-<p>$\begin{array}{c|c} \hline \text{标度} &amp; \text{含义} \ \hline 1 &amp;\text{两个因素相比具有同等重要性} \3 &amp; \text{两个因素相比，前者比后者稍重要}\5&amp;\text{表示两个因素对比，前者比后者明显重要}\7&amp;\text{表示两个因素对比，前者比后者强烈重要}\9&amp;\text{表示两个因素对比，前者比后者极度重要}\2,4,6,8&amp;\text{表示介于两个因素之间的重要性}\\text{倒数}&amp;\text{表示两个因素对比，后者比前者的重要性标度} \ \hline \end{array}$</p>
+<p>$\begin{array}{c|c} \hline \text{标度} &amp; \text{含义} \ \hline 1 &amp;\text{两个因素相比具有同等重要性} \\3 &amp; \text{两个因素相比，前者比后者稍重要}\\5&amp;\text{表示两个因素对比，前者比后者明显重要}\\7&amp;\text{表示两个因素对比，前者比后者强烈重要}\\9&amp;\text{表示两个因素对比，前者比后者极度重要}\\2,4,6,8&amp;\text{表示介于两个因素之间的重要性}\\\text{倒数}&amp;\text{表示两个因素对比，后者比前者的重要性标度} \ \hline \end{array}$</p>
 <ul>
 <li>完全相关结构模型</li>
 </ul>
@@ -242,6 +241,7 @@
 </ol>
 <p>$R.I.$ 是同阶随机判断矩阵的一致性指标的平均值，只与矩阵阶数有关，使用平均随机一致性指标在一定程度上能够克服一致性判断指标随n增大而明显增大的弊端。</p>
 <p>$R.I.$ 是这样得到的：对于固定的$n$,随机构造成对比较阵$A$, 其中$a_{ij}$是从$1,2,…,9\quad \frac12,\frac13,…,\frac19$中随机抽取的。这样的$A$是不一致的, 取充分大的样本得到$A$的最大特征值的平均值</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -282,6 +282,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <ol>
 <li>一致性比例$C.R.$ (Consistency Ratio, C. R. )</li>
 </ol>
@@ -299,6 +300,7 @@
 <li>构建判断矩阵</li>
 </ol>
 <p>① $A$层</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -329,7 +331,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>② $B$层</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -360,6 +364,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -390,6 +396,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -420,10 +428,12 @@
 </tr>
 </tbody>
 </table>
+</div>
 <ol>
 <li>一致性检验</li>
 </ol>
 <p>① $A$层</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -454,12 +464,14 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>$W1=((1\times \frac13 \times 2)^{\frac13}, (3\times1\times5)^{\frac13},(\frac12\times \frac15 \times1)^{\frac13})^T=(0.874,2.466,0.464)^T$</p>
 <p>$W_i=(\frac{0.874}{0.874+2.466+0.464},\frac{2.466}{0.874+2.466+0.464},\frac{0.464}{0.874+2.466+0.464})^T=(0.230,0.648,0.122)^T$</p>
 <p>$\lambda_{mi}=(\frac{1\times0.874+\frac13 \times2.466+2\times0.464}{0.874},\frac{3\times0.874+1 \times2.466+5\times0.464}{2.466},\frac{\frac12\times0.874+\frac15 \times2.466+1\times0.464}{0.464})^T=(3.002,3.004,3.005)^T$</p>
 <p>$\lambda_{max}\approx \frac13(3.002+3.004+3.005)=3.004$</p>
 <p>$C.I.=\frac{3.004-3}{3-1}=0.002&lt;0.1$</p>
 <p>② $B$层 （具体计算步骤同$A$层）</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -490,8 +502,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>$\lambda_{max}\approx \frac13(3.036+3.040+3.040)=3.039$</p>
 <p>$C.I.=\frac{3.039-3}{3-1}=0.02&lt;0.1$</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -522,8 +536,10 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>$\lambda_{max}\approx \frac13(3.015+3.016+3.012)=3.014$</p>
 <p>$C.I.=\frac{3.014-3}{3-1}=0.007&lt;0.1$</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -554,11 +570,13 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>$\lambda_{max}\approx \frac13(3.079+3.082+3.080)=3.08$</p>
 <p>$C.I.=\frac{3.004-3}{3-1}=0.002&lt;0.1$</p>
 <ol>
 <li>方案总重要度计算</li>
 </ol>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -600,6 +618,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>由此得到方案层的权重为$W^{(C)}=(0.426,0.283,0.291)^T$</p>
 <p>结论：优劣顺序为：$C_1&gt;C_3&gt;C_2$ , 很明显 $C_1$为最优方案</p>
 <h3 id="2-混合结构"><a href="#2-混合结构" class="headerlink" title="2 混合结构"></a>2 混合结构</h3><p>如过河收益评价指标体系：</p>
@@ -610,6 +629,7 @@
 <li>构造判断矩阵</li>
 </ol>
 <p>① $A$层</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -640,7 +660,9 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>② $B$层</p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -662,6 +684,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -683,6 +707,8 @@
 </tr>
 </tbody>
 </table>
+</div>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -704,9 +730,11 @@
 </tr>
 </tbody>
 </table>
+</div>
 <ol>
 <li>一致性检验</li>
 </ol>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -773,6 +801,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>$\lambda_{maxA}=3.039$</p>
 <p>$C.R.=\frac{C.I.}{R.I.}=\frac{0.0195}{0.52}=0.0375&lt;0.1$</p>
 <p>矩阵$A$具有满意的一致性</p>
@@ -783,6 +812,7 @@
 <ol>
 <li>方案总重要度</li>
 </ol>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -845,6 +875,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p>$\therefore W_C=(0.424,0.211,0.087,0.173,0.087,0.018)^T$ </p>
 <p>因此$C$层关于总目标的权重排序为$C_1&gt;C_2&gt; C_4 &gt; C_3 = C_5&gt; C_6 $</p>
 <p>(如有错误 作者是🐷)</p>
@@ -928,6 +959,21 @@
   </div>
 </footer>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
 <!-- styles -->

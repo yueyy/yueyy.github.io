@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <!-- so meta -->
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="HandheldFriendly" content="True">
@@ -44,14 +44,13 @@
     
       <link rel="stylesheet" href="/css/rtl.css">
     
-    <!-- rss -->
+    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
     
     
 </head>
 
-<body class="max-width mx-auto px3 ltr">
-    
-      <div id="header-post">
+<body class="max-width mx-auto px3 ltr">    
+      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
   <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
   <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
@@ -147,6 +146,7 @@
 <p>write to both standard output and to a file</p>
 </blockquote>
 <p><strong>重定向命令</strong></p>
+<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -189,6 +189,7 @@
 </tr>
 </tbody>
 </table>
+</div>
 <p><strong>I/O重定向</strong></p>
 <p>基于标准数据流原理</p>
 <ul>
@@ -269,7 +270,7 @@
 <p>1-65535 匹配正则</p>
 <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">65530</span><span class="number">-65535</span>  -&gt;  <span class="number">6553</span>[<span class="number">0</span><span class="number">-5</span>]</span><br><span class="line"><span class="number">65500</span><span class="number">-65529</span>  -&gt;  <span class="number">655</span>[<span class="number">0</span><span class="number">-2</span>][<span class="number">0</span><span class="number">-9</span>]</span><br><span class="line"><span class="number">65000</span><span class="number">-65499</span>  -&gt;  <span class="number">65</span>[<span class="number">0</span><span class="number">-4</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">2</span>&#125;    第三位区间<span class="number">0</span><span class="number">-4</span>，后两位<span class="number">0</span><span class="number">-9</span></span><br><span class="line"><span class="number">60000</span><span class="number">-64999</span>  -&gt;  <span class="number">6</span>[<span class="number">0</span><span class="number">-4</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">3</span>&#125;     第二位区间<span class="number">0</span><span class="number">-4</span>，后三位<span class="number">0</span><span class="number">-9</span></span><br><span class="line"><span class="number">10000</span><span class="number">-59999</span>  -&gt;  [<span class="number">1</span><span class="number">-5</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">4</span>&#125;      第一位区间<span class="number">1</span><span class="number">-5</span>，后四位<span class="number">0</span><span class="number">-9</span></span><br><span class="line"><span class="number">1</span><span class="number">-9999</span>       -&gt;  [<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">0</span>,<span class="number">3</span>&#125;    第一位只能是<span class="number">1</span><span class="number">-9</span>，后三位可有可无</span><br></pre></td></tr></table></figure>
 <p>最后得：</p>
-<p><code></code>(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[1-9][0-9]{0,3})`  </p>
+<p><code>`(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[1-9][0-9]{0,3})</code>  </p>
 <h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
 <li>判断一个字符串是否合法的E-mail</li>
 </ul>
@@ -354,6 +355,21 @@
   </div>
 </footer>
 
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
 <!-- styles -->
