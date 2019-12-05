@@ -1,33 +1,375 @@
+<!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Input/Output redirection and Regular expression - Yue</title>
-<base href="/">
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
-<link rel="icon" type="image/x-icon" href="/favicon.ico">
-<link rel="manifest" href="manifest.json">
-<meta name="theme-color" content="#2a2b33">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="translucent">
-<meta name="description" content="Input/Output redirection管道命令 | : 将前一个命令的输出给下一个命令作为输入  仅将stdout传输到stdin 1command1 | command2 管道技术是Linux间的一种通信技术，利用先进先出排队模型来指挥进程间的通信（可当作连接两个实体的一个单向连接器）。Linux管道可用于应用程序之间、linux命令之间、应用程序与命令间的通讯。shell编程指利用管">
+    <!-- so meta -->
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="HandheldFriendly" content="True">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+    <meta name="description" content="Input/Output redirection管道命令 | : 将前一个命令的输出给下一个命令作为输入  仅将stdout传输到stdin 1command1 | command2 管道技术是Linux间的一种通信技术，利用先进先出排队模型来指挥进程间的通信（可当作连接两个实体的一个单向连接器）。Linux管道可用于应用程序之间、linux命令之间、应用程序与命令间的通讯。shell编程指利用管">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Input&#x2F;Output redirection and Regular expression">
 <meta property="og:url" content="http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/index.html">
 <meta property="og:site_name" content="Yue">
 <meta property="og:description" content="Input/Output redirection管道命令 | : 将前一个命令的输出给下一个命令作为输入  仅将stdout传输到stdin 1command1 | command2 管道技术是Linux间的一种通信技术，利用先进先出排队模型来指挥进程间的通信（可当作连接两个实体的一个单向连接器）。Linux管道可用于应用程序之间、linux命令之间、应用程序与命令间的通讯。shell编程指利用管">
-<meta property="og:locale" content="default">
 <meta property="og:image" content="https://img-blog.csdn.net/20160918134712346">
 <meta property="og:updated_time" content="2018-12-01T21:15:33.183Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Input&#x2F;Output redirection and Regular expression">
 <meta name="twitter:description" content="Input/Output redirection管道命令 | : 将前一个命令的输出给下一个命令作为输入  仅将stdout传输到stdin 1command1 | command2 管道技术是Linux间的一种通信技术，利用先进先出排队模型来指挥进程间的通信（可当作连接两个实体的一个单向连接器）。Linux管道可用于应用程序之间、linux命令之间、应用程序与命令间的通讯。shell编程指利用管">
 <meta name="twitter:image" content="https://img-blog.csdn.net/20160918134712346">
-<link href="styles.7c718be35797443ae432.bundle.css" rel="stylesheet">
-
-<script src="config.3858dff13c2579fc2965.js"></script>
+    
+    
+        
+          
+              <link rel="shortcut icon" href="/images/favicon.ico">
+          
+        
+        
+          
+            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
+          
+        
+        
+          
+            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+          
+        
+    
+    <!-- title -->
+    <title>Input/Output redirection and Regular expression</title>
+    <!-- styles -->
+    <link rel="stylesheet" href="/css/style.css">
+    <!-- persian styles -->
+    
+      <link rel="stylesheet" href="/css/rtl.css">
+    
+    <!-- rss -->
+    
+    
 </head>
-<body>
-<is-root></is-root>
-<script src="inline.318b50c57b4eba3d437b.bundle.js"></script><script src="polyfills.364619ec5cf54423ac5b.bundle.js"></script><script src="main.9261fe3832a48fa6590f.bundle.js"></script>
+
+<body class="max-width mx-auto px3 ltr">
+    
+      <div id="header-post">
+  <a id="menu-icon" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="menu-icon-tablet" href="#"><i class="fas fa-bars fa-lg"></i></a>
+  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fas fa-chevron-up fa-lg"></i></a>
+  <span id="menu">
+    <span id="nav">
+      <ul>
+         
+          <li><a href="/">Inicio</a></li>
+         
+          <li><a href="/about/">Acerca de</a></li>
+         
+          <li><a href="/archives/">Articulos</a></li>
+         
+          <li><a href="/projects_url">Proyectos</a></li>
+        
+      </ul>
+    </span>
+    <br/>
+    <span id="actions">
+      <ul>
+        
+        <li><a class="icon" href="/2019/12/05/层次分析法-AHP/"><i class="fas fa-chevron-left" aria-hidden="true" onmouseover="$('#i-prev').toggle();" onmouseout="$('#i-prev').toggle();"></i></a></li>
+        
+        
+        <li><a class="icon" href="/2018/08/13/JavaBaseNotes/"><i class="fas fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
+        
+        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
+        <li><a class="icon" href="#"><i class="fas fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
+      </ul>
+      <span id="i-prev" class="info" style="display:none;">Post Anterior</span>
+      <span id="i-next" class="info" style="display:none;">Post Siguiente</span>
+      <span id="i-top" class="info" style="display:none;">Arriba</span>
+      <span id="i-share" class="info" style="display:none;">Compartir Post</span>
+    </span>
+    <br/>
+    <div id="share" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/"><i class="fab fa-facebook " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&text=Input/Output redirection and Regular expression"><i class="fab fa-twitter " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-linkedin " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&is_video=false&description=Input/Output redirection and Regular expression"><i class="fab fa-pinterest " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Input/Output redirection and Regular expression&body=Check out this article: http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/"><i class="fas fa-envelope " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-get-pocket " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-reddit " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-stumbleupon " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-digg " aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&name=Input/Output redirection and Regular expression&description="><i class="fab fa-tumblr " aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+    <div id="toc">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Input-Output-redirection"><span class="toc-number">1.</span> <span class="toc-text">Input/Output redirection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#管道命令"><span class="toc-number">1.0.1.</span> <span class="toc-text">管道命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tee"><span class="toc-number">1.0.2.</span> <span class="toc-text">tee</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入重定向"><span class="toc-number">1.0.3.</span> <span class="toc-text">输入重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出重定向"><span class="toc-number">1.0.4.</span> <span class="toc-text">输出重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dev-null"><span class="toc-number">1.0.5.</span> <span class="toc-text">/dev/null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Regular-Expression"><span class="toc-number">2.</span> <span class="toc-text">Regular Expression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-number">2.0.1.</span> <span class="toc-text">应用</span></a></li></ol></li></ol></li></ol>
+    </div>
+  </span>
+</div>
+
+    
+    <div class="content index my4">
+        
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+  <header>
+    
+    <h1 class="posttitle" itemprop="name headline">
+        Input/Output redirection and Regular expression
+    </h1>
+
+
+
+    <div class="meta">
+      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <span itemprop="name">Yue</span>
+      </span>
+      
+    <div class="postdate">
+        <time datetime="2018-11-30T17:25:46.000Z" itemprop="datePublished">2018-12-01</time>
+    </div>
+
+
+      
+
+    </div>
+  </header>
+  
+
+  <div class="content" itemprop="articleBody">
+    <h1 id="Input-Output-redirection"><a href="#Input-Output-redirection" class="headerlink" title="Input/Output redirection"></a>Input/Output redirection</h1><h3 id="管道命令"><a href="#管道命令" class="headerlink" title="管道命令"></a>管道命令</h3><blockquote>
+<p>| : 将前一个命令的输出给下一个命令作为输入</p>
+</blockquote>
+<p><strong>仅将stdout传输到stdin</strong></p>
+<figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">comma<span class="symbol">nd1</span> | comma<span class="symbol">nd2</span></span><br></pre></td></tr></table></figure>
+<p>管道技术是Linux间的一种通信技术，利用先进先出排队模型来指挥进程间的通信（可当作连接两个实体的一个单向连接器）。Linux管道可用于应用程序之间、linux命令之间、应用程序与命令间的通讯。shell编程指利用管道进行Linux命令之间的通信。</p>
+<h3 id="tee"><a href="#tee" class="headerlink" title="tee"></a>tee</h3><blockquote>
+<p>write to both standard output and to a file</p>
+</blockquote>
+<p><strong>重定向命令</strong></p>
+<table>
+<thead>
+<tr>
+<th>command</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>command &gt; file</td>
+<td>将输出重定向到file</td>
+</tr>
+<tr>
+<td>command &lt; file</td>
+<td>将输入重定向到 file</td>
+</tr>
+<tr>
+<td>command &gt;&gt; file</td>
+<td>将输出以追加的方式重定向到 file</td>
+</tr>
+<tr>
+<td>n &gt; file</td>
+<td>将文件描述符为 n 的文件重定向到 file</td>
+</tr>
+<tr>
+<td>n &gt;&gt; file</td>
+<td>将文件描述符为 n 的文件以追加的方式重定向到 file</td>
+</tr>
+<tr>
+<td>n &gt;&amp; m</td>
+<td>将输出文件 m 和 n 合并</td>
+</tr>
+<tr>
+<td>n &lt;&amp; m</td>
+<td>输入文件 m 和 n 合并</td>
+</tr>
+<tr>
+<td>&lt;&lt; tag</td>
+<td>将开始标记 tag 和结束标记 tag 之间的内容作为输入</td>
+</tr>
+</tbody>
+</table>
+<p><strong>I/O重定向</strong></p>
+<p>基于标准数据流原理</p>
+<ul>
+<li>标准输入（stdin）0</li>
+<li>标准输出（stdout）1</li>
+<li>标准错误输出（stderr）2</li>
+</ul>
+<p><strong>重定向I/O的是shell而不是程序</strong></p>
+<p>对Linux进程来讲，每个打开的文件都是通过文件描述符(File Descriptor)来标识的，内核为每个进程维护了一个<strong>文件描述符表</strong>，这个表以FD为索引，再进一步指向文件的详细信息。在进程创建时，内核为进程默 认创建了 <code>0、1、2</code> 三个特殊的FD，这就是<code>STDIN、STDOUT和STDERR</code>。</p>
+<p><img src="https://img-blog.csdn.net/20160918134712346" alt="图片"></p>
+<p><strong>I/O重定向也就是让已创建的FD指向其他文件。</strong></p>
+<p><a href="https://blog.csdn.net/beautysleeper/article/details/52573994" target="_blank" rel="noopener">Shell I/O重定向的原理解释</a></p>
+<p><a href="https://blog.csdn.net/taiyang1987912/article/details/39401265" target="_blank" rel="noopener">I/O重定向</a></p>
+<h3 id="输入重定向"><a href="#输入重定向" class="headerlink" title="输入重定向"></a>输入重定向</h3><blockquote>
+<p>通常从标准输入获取输入的命令可以有自己的方式从文件进行输入重定向。</p>
+</blockquote>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">command</span> &lt; <span class="title">file</span></span><br></pre></td></tr></table></figure>
+<p>file作为输入给command</p>
+<figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">command</span> &lt;&lt;&lt; <span class="title">string</span></span><br></pre></td></tr></table></figure>
+<p>string给command</p>
+<h3 id="输出重定向"><a href="#输出重定向" class="headerlink" title="输出重定向"></a>输出重定向</h3><blockquote>
+<p>一个命令的输出通常用于标准输出，也可以很容易地将输出转移到一个文件。</p>
+</blockquote>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&gt;</span><span class="bash"> file1.txt</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight tcl"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">: &gt; <span class="keyword">filename</span></span><br></pre></td></tr></table></figure>
+<p>将filename变为空文件，size为0</p>
+<p>文件不存在则创建</p>
+<p>: 为占位 不产生输出</p>
+<h3 id="dev-null"><a href="#dev-null" class="headerlink" title="/dev/null"></a>/dev/null</h3><blockquote>
+<p>有时希望执行某个命令，但又不需要显示输出，则将输出重定向到/dev/null，从而丢弃输出</p>
+</blockquote>
+<figure class="highlight gradle"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">command &gt; <span class="regexp">/dev/</span><span class="keyword">null</span></span><br></pre></td></tr></table></figure>
+<p><strong>/dev/null</strong></p>
+<ul>
+<li>写入的内容都会被丢弃</li>
+<li>无法读取内容</li>
+<li>达到“禁止输出”效果</li>
+</ul>
+<p>错误输出不显示</p>
+<figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="symbol">2 </span>&gt; /dev/null</span><br></pre></td></tr></table></figure>
+<h1 id="Regular-Expression"><a href="#Regular-Expression" class="headerlink" title="Regular Expression"></a>Regular Expression</h1><p>正则表达式是什么？</p>
+<blockquote>
+<p>记录文本规则的代码</p>
+</blockquote>
+<p><a href="https://zh.wikipedia.org/wiki/%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F" target="_blank" rel="noopener">正则表达式</a></p>
+<p><strong>通配符wildcard</strong></p>
+<ol>
+<li><p><code>.</code>匹配不包括换行的任意字符</p>
+</li>
+<li><p><code>\s</code>空格 tab 换行</p>
+</li>
+</ol>
+<ul>
+<li><code>[\s\S]</code>表示匹配任意字符</li>
+<li>\S是\s的反义</li>
+</ul>
+<ol>
+<li><code>*</code>匹配0-n个</li>
+<li><code>+</code>匹配1-n个</li>
+<li><code>\</code>转义</li>
+<li><code>[]</code>单字符取一个，比如[abc]会匹配<code>a或b或c</code></li>
+<li><code>^</code>字符串开始</li>
+<li><code>$</code>字符串结束</li>
+<li><code>{1,3}</code>循环次数</li>
+<li><code>？</code><ul>
+<li>匹配一个或零个</li>
+<li>非贪婪模式</li>
+</ul>
+</li>
+<li><code>|</code>多数据选一</li>
+<li><code>()</code>数据分界和取数据</li>
+<li><code>(?:)</code>非捕获组</li>
+<li>分隔符</li>
+<li>模式修饰符</li>
+</ol>
+<p><a href="http://www.zjmainstay.cn/my-regexp" target="_blank" rel="noopener">正则字符</a></p>
+<p><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">入门教程</a></p>
+<p>1-65535 匹配正则</p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">65530</span><span class="number">-65535</span>  -&gt;  <span class="number">6553</span>[<span class="number">0</span><span class="number">-5</span>]</span><br><span class="line"><span class="number">65500</span><span class="number">-65529</span>  -&gt;  <span class="number">655</span>[<span class="number">0</span><span class="number">-2</span>][<span class="number">0</span><span class="number">-9</span>]</span><br><span class="line"><span class="number">65000</span><span class="number">-65499</span>  -&gt;  <span class="number">65</span>[<span class="number">0</span><span class="number">-4</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">2</span>&#125;    第三位区间<span class="number">0</span><span class="number">-4</span>，后两位<span class="number">0</span><span class="number">-9</span></span><br><span class="line"><span class="number">60000</span><span class="number">-64999</span>  -&gt;  <span class="number">6</span>[<span class="number">0</span><span class="number">-4</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">3</span>&#125;     第二位区间<span class="number">0</span><span class="number">-4</span>，后三位<span class="number">0</span><span class="number">-9</span></span><br><span class="line"><span class="number">10000</span><span class="number">-59999</span>  -&gt;  [<span class="number">1</span><span class="number">-5</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">4</span>&#125;      第一位区间<span class="number">1</span><span class="number">-5</span>，后四位<span class="number">0</span><span class="number">-9</span></span><br><span class="line"><span class="number">1</span><span class="number">-9999</span>       -&gt;  [<span class="number">1</span><span class="number">-9</span>][<span class="number">0</span><span class="number">-9</span>]&#123;<span class="number">0</span>,<span class="number">3</span>&#125;    第一位只能是<span class="number">1</span><span class="number">-9</span>，后三位可有可无</span><br></pre></td></tr></table></figure>
+<p>最后得：</p>
+<p><code></code>(6553[0-5]|655[0-2][0-9]|65[0-4][0-9]{2}|6[0-4][0-9]{3}|[1-5][0-9]{4}|[1-9][0-9]{0,3})`  </p>
+<h3 id="应用"><a href="#应用" class="headerlink" title="应用"></a>应用</h3><ul>
+<li>判断一个字符串是否合法的E-mail</li>
+</ul>
+<ol>
+<li>创建一个匹配E-mail的正则表达式</li>
+<li>用该正则表达式去匹配用户的输入</li>
+</ol>
+
+  </div>
+</article>
+
+
+
+    </div>
+    
+      <div id="footer-post-container">
+  <div id="footer-post">
+
+    <div id="nav-footer" style="display: none">
+      <ul>
+         
+          <li><a href="/">Inicio</a></li>
+         
+          <li><a href="/about/">Acerca de</a></li>
+         
+          <li><a href="/archives/">Articulos</a></li>
+         
+          <li><a href="/projects_url">Proyectos</a></li>
+        
+      </ul>
+    </div>
+
+    <div id="toc-footer" style="display: none">
+      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Input-Output-redirection"><span class="toc-number">1.</span> <span class="toc-text">Input/Output redirection</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#管道命令"><span class="toc-number">1.0.1.</span> <span class="toc-text">管道命令</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#tee"><span class="toc-number">1.0.2.</span> <span class="toc-text">tee</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入重定向"><span class="toc-number">1.0.3.</span> <span class="toc-text">输入重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出重定向"><span class="toc-number">1.0.4.</span> <span class="toc-text">输出重定向</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#dev-null"><span class="toc-number">1.0.5.</span> <span class="toc-text">/dev/null</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Regular-Expression"><span class="toc-number">2.</span> <span class="toc-text">Regular Expression</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#应用"><span class="toc-number">2.0.1.</span> <span class="toc-text">应用</span></a></li></ol></li></ol></li></ol>
+    </div>
+
+    <div id="share-footer" style="display: none">
+      <ul>
+  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/"><i class="fab fa-facebook fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&text=Input/Output redirection and Regular expression"><i class="fab fa-twitter fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&is_video=false&description=Input/Output redirection and Regular expression"><i class="fab fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="mailto:?subject=Input/Output redirection and Regular expression&body=Check out this article: http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/"><i class="fas fa-envelope fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-reddit fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&title=Input/Output redirection and Regular expression"><i class="fab fa-digg fa-lg" aria-hidden="true"></i></a></li>
+  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2018/12/01/Input-Output-redirection-and-Regular-expression/&name=Input/Output redirection and Regular expression&description="><i class="fab fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
+</ul>
+
+    </div>
+
+    <div id="actions-footer">
+        <a id="menu" class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fas fa-bars fa-lg" aria-hidden="true"></i> Menu</a>
+        <a id="toc" class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fas fa-list fa-lg" aria-hidden="true"></i> TOC</a>
+        <a id="share" class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fas fa-share-alt fa-lg" aria-hidden="true"></i> Compartir</a>
+        <a id="top" style="display:none" class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fas fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a>
+    </div>
+
+  </div>
+</div>
+
+    
+    <footer id="footer">
+  <div class="footer-left">
+    Copyright &copy; 2019 Yue
+  </div>
+  <div class="footer-right">
+    <nav>
+      <ul>
+         
+          <li><a href="/">Inicio</a></li>
+         
+          <li><a href="/about/">Acerca de</a></li>
+         
+          <li><a href="/archives/">Articulos</a></li>
+         
+          <li><a href="/projects_url">Proyectos</a></li>
+        
+      </ul>
+    </nav>
+  </div>
+</footer>
+
 </body>
 </html>
+<!-- styles -->
+<link rel="stylesheet" href="/lib/font-awesome/css/fontawesome-all.min.css">
+<link rel="stylesheet" href="/lib/justified-gallery/css/justifiedGallery.min.css">
+
+<!-- jquery -->
+<script src="/lib/jquery/jquery.min.js"></script>
+<script src="/lib/justified-gallery/js/jquery.justifiedGallery.min.js"></script>
+<script src="/js/main.js"></script>
+<!-- search -->
+
+<!-- Google Analytics -->
+
+<!-- Baidu Analytics -->
+
+<!-- Disqus Comments -->
+
+
