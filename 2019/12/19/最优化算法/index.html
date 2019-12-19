@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Do what you want to do.">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      最优化算法 | Yue
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+    css('css/plugins/gitment.css')
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+    <script src="/js/qrious.js"></script>
+  
+  
+    <script src="/js/gitment.js"></script>
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Yue</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>最优化算法</h2>
+  <p class="post-date">2019-12-19</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="最优化算法"><a href="#最优化算法" class="headerlink" title="最优化算法"></a>最优化算法</h1><h2 id="下降算法"><a href="#下降算法" class="headerlink" title="下降算法"></a>下降算法</h2><h3 id="1-下降迭代算法"><a href="#1-下降迭代算法" class="headerlink" title="1 下降迭代算法"></a>1 下降迭代算法</h3><h4 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h4><ul>
+<li>给出初始点$x^{(0)},k\leftarrow0$</li>
+<li>判断$x^{(k)}$是否为极小点或近似极小点，是则停止，否则下一步</li>
+<li>按照某种规则确定搜索方向$p^{(k)}$</li>
+<li>按照某种规则确定搜索步长$\lambda_k$得到$x^{(k+1)}=x^{(k)}+\lambda_kp^{(k)}$使得$f(x^{(k)}+\lambda_kp^{(k)})&lt;f(x^{(k)})$ ，$\to$ ②</li>
+</ul>
+<h4 id="线性搜索-一维搜索"><a href="#线性搜索-一维搜索" class="headerlink" title="线性搜索(一维搜索)"></a>线性搜索(一维搜索)</h4><p><strong>最优步长</strong>：使得目标函数值下降最多的$\lambda_k=argminf(x^{(k)}+\lambda p^{(k)})$</p>
+<p>求解以$\lambda$为变量的一元函数$f(x^{(k)}+\lambda p^{(k)})$的极小值点$\lambda_k$</p>
+<p><strong>性质:</strong>在搜索方向上所得最优点处的梯度与搜索方向正交 $\nabla f(x^{(k+1)})^Tp^{(k)})=0$</p>
+<p>$\phi(\lambda)=f(x^{(k)}+\lambda p^{(k)})\\\phi(\lambda)’=\nabla f(x^{(k)}+\lambda p^{(k)})^Tp^{(k)}=\nabla f(x^{(k+1)})^Tp^{(k)}=0$</p>
+<h4 id="终止条件"><a href="#终止条件" class="headerlink" title="终止条件"></a>终止条件</h4><ul>
+<li><p>绝对误差</p>
+<p>$||x^{(k+1)}-x^{(k)}||&lt;\epsilon_1,\quad ||f(x^{(k+1)})-f(x^{(k)})||&lt;\epsilon_2$</p>
+</li>
+<li><p>相对误差</p>
+<p>$\frac{||x^{(k+1)}-x^{(k)}||}{||x^{(k)}||}&lt;\epsilon_3,\quad \frac{||f(x^{(k+1)})-f(x^{(k)})||}{||f(x^{(k)})||}&lt;\epsilon_4$</p>
+</li>
+<li><p>目标函数梯度的模</p>
+<p>$||\nabla f(x^{(k)})||\leq \epsilon_5$</p>
+</li>
+</ul>
+<h4 id="收敛速度"><a href="#收敛速度" class="headerlink" title="收敛速度"></a>收敛速度</h4><p>设序列$\{x^{(k)}\}$收敛于$x^<em>$ 若存在于迭代次数$k$无关的数$0&lt;\beta&lt;\infty$和$\alpha \geq1$使得$k$从某个$k_0&gt;0$开始都有$||x^{(k+1)}-x^</em>||\leq\beta||x^{(k)}-x^*||^{\alpha}$ 成立，则$\{x^{(k)}\}$的收敛阶为$\alpha$或$\{x^{(k)}\}$为$\alpha$阶收敛</p>
+<ul>
+<li>二阶收敛 $\alpha=2$</li>
+<li>超线性收敛 $1&lt;\alpha&lt;2$</li>
+<li>线性收敛 $\alpha=1$且$0&lt;\beta&lt;1$</li>
+</ul>
+<p>线性收敛速度较慢，二阶收敛速度较快</p>
+<h3 id="2-Fabonacci"><a href="#2-Fabonacci" class="headerlink" title="2 Fabonacci"></a>2 Fabonacci</h3><p><strong>单变量最优化问题(一维最优化问题)</strong></p>
+<p>$minimize\quad f(x)\\subject\; to \quad x\in R$</p>
+<h4 id="步骤-1"><a href="#步骤-1" class="headerlink" title="步骤"></a>步骤</h4><ul>
+<li><p>确定试点个数$n$：根据相对精度$\delta$确定$F_n$，然后查表得$n$</p>
+</li>
+<li><p>选取前两个试算点的位置，第一次缩短</p>
+<p>$\begin{cases}t_1=a_0+\frac{F_n-2}{F_n}(b_0-a_0)=b_0-\frac{F_n-1}{F_n}(b_0-a_0)\\t_1’=a_0+\frac{F_n-1}{F_n}(b_0-a_0)  \end{cases}$</p>
+</li>
+<li><p>计算函数值$f(t_1)$和$f(t_1’)$ 并比较</p>
+<ul>
+<li><p>$f(t_1)&lt;f(t_1’)$</p>
+<p>$a_1=a_0,b_1=t_1’,\\t_2=b_1-\frac{F_n-2}{F_n-1}(b_1-a_1),t_2’=t_1$</p>
+</li>
+<li><p>$f(t_1)&gt;f(t_1’)$</p>
+<p>$a_1=t_1,b_1=b_0,\\t_2=t_1’,t_2’=a_1+\frac{F_n-2}{F_n-1}(b_1-a_1)$</p>
+</li>
+</ul>
+</li>
+<li><p>计算函数值$f(t_2)$和$f(t_2’)$ </p>
+</li>
+<li><p>当进行到$k=n-1$时$t_{n-1}=t’_{n-1}=\frac{a_{n-2}+b_{n-2}}{2}$</p>
+<p>此时无法比较函数值的大小以确定最终区间，因此此时取</p>
+<p>$\begin{cases}t_{n-1}=\frac{a_{n-2}+b_{n-2}}{2}\\t_{n-1}’=a_{n-2}+(\frac12+\epsilon)(b_{n-2}-a_{n-2}) \end{cases}$</p>
+<p>在$t_{n-1}$=和$t’_{n-1}$两点中，以函数值较小者为近似极小点，相应函数值为近似极小值，最终区间$[a_{n-2},t’_{n-2}]$或$[t_{n-1},b_{n-2}]$</p>
+</li>
+</ul>
+<h3 id="3-0-168"><a href="#3-0-168" class="headerlink" title="3 0.168"></a>3 0.168</h3><p><strong>用不变的区间缩短率0.618代替Fibonacci法中每次不同的缩短率</strong></p>
+<ul>
+<li>每次的缩短率$\mu=0.618$最后的区间长度$(b_0-a_0)\mu^{n-1}$</li>
+<li>当已知缩短精度$\delta$时，由$\mu^{n-1}\leq \delta$求解$n$</li>
+</ul>
+<h4 id="步骤-2"><a href="#步骤-2" class="headerlink" title="步骤"></a>步骤</h4><ul>
+<li><p>置初始区间$[a_0,b_0]$及精度要求$L&gt;0$，计算试探点$\lambda_1(t_1)$和$\mu_1(t_1’)$，并计算其函数值</p>
+<p>$\lambda_1=b_0-0.618(b_0-a_0)=a_0+0.382(b_0-a_0)=0.618a_0+0.382b_0$</p>
+<p>$\mu_1=a_0+0.618(b_0-a_0)=0.382a_0+0.618b_0$</p>
+</li>
+<li><p>若$b_k-a_k&lt;L$  end , or:</p>
+<ul>
+<li><p>当$f(\lambda_k)&gt;f(\mu_k)$时</p>
+<p>$a_{k+1}=\lambda_k,\;b_{k+1}=b_k,\;\lambda_{k+1}=\mu_k,\;\mu_{k+1}=a_{k+1}+0.618(b_{k+1}-a_{k+1})$</p>
+</li>
+<li><p>当$f(\lambda_k)&lt;f(\mu_k)$时</p>
+<p>$a_{k+1}=a_k,\;b_{k+1}=\mu_k,\;\mu_{k+1}=\lambda_k,\;\mu_{k+1}=b_{k+1}-0.618(b_{k+1}-a_{k+1})$</p>
+</li>
+</ul>
+</li>
+<li><p>迭代计算</p>
+</li>
+</ul>
+<p><strong>Fibonacci斐波那契数列</strong></p>
+<p>$1,1,2,3,5,8,13,21,34,55,89,144…$</p>
+<p>数列从第三项起任意一项都是前面两项之和，即$F_{n+2}=F_{n+1}+F_n$</p>
+<ul>
+<li><p>若数列$\{F_n\}$为斐波那契数列，则$lim_{n\to \infty} \frac{F_{n+1}}{F_n}=\frac{1+\sqrt5}2$ ，$\frac2{1+\sqrt5}$为黄金分割比</p>
+</li>
+<li><p>若数列$\{F_n\}$为斐波那契数列，则数列前$n$项和为$S_n=\frac1{\sqrt5}[(\frac{1+\sqrt5}2)^{n+2}-(\frac{1-\sqrt5}2)^{n+2}]-1$</p>
+<p>$S_n=F_1+F_2+F_3+…+F_n=F_1+(F_3-F_1)+(F_4-F_2)+(F_5-F_3)+…+(F_{n+1})-(F_{n-1})\\=-F_2+F_n+F_{n+1}=F_{n+2}-1$</p>
+</li>
+<li><p>若数列$\{F_n\}$为斐波那契数列，$A,B,C,D$为四个连续的斐波那契数，则有$C^2-B^2=A\times D$</p>
+</li>
+</ul>
+<h1 id="最优化算法-1"><a href="#最优化算法-1" class="headerlink" title="最优化算法"></a>最优化算法</h1><ul>
+<li>下降方向</li>
+</ul>
+<p>假设$f:R^n\to R$对于$x\in dom f$，使得对于任意$\overline{\alpha}&gt;0,d\in R^n$有$f(x+\alpha d)&lt;f(x),\alpha \in(0,\overline{\alpha})$，则$d$ 为$f$的一个下降方向</p>
+<p>【$\nabla f(x)^Td&lt;0$的$d$为$f$的一个下降方向】</p>
+<ul>
+<li>可行方向</li>
+</ul>
+<p>假设$f:R^n\to R$对于$x\in dom f$，若存在$\alpha&gt;0,d\in R^n$使得$f(x+\alpha d)\in dom f$，则$d$ 为$f$的一个可行方向</p>
+<ul>
+<li>局部最优解</li>
+</ul>
+<p>假设$f:R^n\to R$在点$x^<em> \in R$处可微。若$x^</em>$是无约束问题的局部最优解，则$\nabla f(x^*)=0$</p>
+<p>$x^*$为函数$f$的驻点或平稳点。函数的一个驻点可以是极小点也可以是极大点，也可以不是极小点也不是极大点，此时成为鞍点。</p>
+<p>$x^<em>$是无约束问题的局部最优解的必要条件是$x^</em>$ 是其目标函数$f$ 的驻点</p>
+<ul>
+<li>严格局部最优解</li>
+</ul>
+<p>假设$f:R^n\to R$在点$x^<em> \in R$处的Hessian矩阵$\nabla^2f(x^</em>)$存在，若$\nabla f(x^<em>)=0$, 并且$\nabla^2f(x^</em>)$正定，则$x^*$ 是无约束问题的严格局部最优解</p>
+<ul>
+<li>整体最优解</li>
+</ul>
+<p>假设$f:R^n\to R$，$x^<em> \in R$，$f$ 是$R^n$ 上的可微凸函数，若有$\nabla f(x^</em>)=0$ 则$x^*$ 是无约束问题的整体最优解</p>
+<p>一般而言，无约束问题的目标函数的驻点不一定是无约束问题的最优解。但对于其目标函数是凸函数的无约束凸规划，它的目标函数的驻点就是它的整体最优解。</p>
+<h2 id="无约束最优化问题"><a href="#无约束最优化问题" class="headerlink" title="无约束最优化问题"></a>无约束最优化问题</h2><p>$minimize\quad f(x)\\subject\;to\quad x\in R^n$</p>
+<p>假设$f(x)$有一阶连续偏导数，具有极小点$x^*$ 以$x^{(k)}$表示下降算法中极小点的第$k$次近似，则第$k+1$次近似点为第$k$点处沿某下降方向$d^{(k)}$取$x^{(k+1)}=x^{(k)}+\alpha d^{(k)}$</p>
+<ul>
+<li><p>确定搜索方向</p>
+</li>
+<li><p>确定搜索步长</p>
+</li>
+</ul>
+<h4 id="负梯度方向"><a href="#负梯度方向" class="headerlink" title="负梯度方向"></a>负梯度方向</h4><p>$f(x^{(k)}+\alpha d^{(k)})=f(x^{(k)})+\alpha \nabla f(x^{(k)})^Td^{(k)}+o(\alpha)$</p>
+<p>选择使得目标值得到尽可能大改善的方向，也就是$\nabla f(x^{(k)})^Td^{(k)}$最小的方向</p>
+<p>$\nabla f(x^{(k)})^Td^{(k)}=||\nabla f(x^{(k)})^T||·||d^{(k)}||cos(\nabla f(x^{(k)})^T,d^{(k)})$</p>
+<p>当余弦值最小时得最小值，此时夹角为$180^\circ$</p>
+<p>$d^{(k)}=-\nabla f(x^{(k)})^T$ 即<strong>负梯度方向</strong></p>
+<p><em>对于等值线是圆的问题，不管初始点在哪里，负梯度方向总是指向圆心，因此一次迭代即可得到最小值点</em></p>
+<h3 id="1-近似最佳步长"><a href="#1-近似最佳步长" class="headerlink" title="1 近似最佳步长"></a>1 近似最佳步长</h3><ul>
+<li><p>搜索方向：负梯度方向 </p>
+<p>$d^{(k)}=-\nabla f(x^{(k)})^T$ </p>
+</li>
+<li><p>搜索步长：近似最佳步长</p>
+</li>
+</ul>
+<p>若$f(x)$有二阶连续偏导数，在$x^{(k)}$作$f(x^{(k)}-\lambda \nabla f(x^{(k)})^T)$泰勒展开得</p>
+<p>$f(x^{(k)}-\lambda \nabla f(x^{(k)})^T) \approx f(x^{(k)})^T \lambda \nabla f(x^{(k)})+\frac12 \lambda \nabla f(x^{(k)})^TH(x^{(k)})\lambda \nabla f(x^{(k)})$</p>
+<p>对$\lambda$求导并令其等$0$ 得<strong>近似最佳步长</strong></p>
+<p>$\lambda_k=\frac{\nabla f(x^{(k)})^T\nabla f(x^{(k)})}{\nabla f(x^{(k)})^TH(x^{(k)})\nabla f(x^{(k)})}$</p>
+<p>【若将搜索方向规格化为$d^{(k)}=\frac{-\nabla f(x^{(k)})^T}{||\nabla f(x^{(k)})^T||}$，此时$\lambda_k=\frac{\nabla f(x^{(k)})^T\nabla f(x^{(k)})||\nabla f(x^{(k)})^T||}{\nabla f(x^{(k)})^TH(x^{(k)})\nabla f(x^{(k)})}$ 】</p>
+<h3 id="2-最速下降法（梯度法）"><a href="#2-最速下降法（梯度法）" class="headerlink" title="2 最速下降法（梯度法）"></a>2 最速下降法（梯度法）</h3><ul>
+<li><p>搜索方向：负梯度方向 </p>
+<p>$d^{(k)}=-\nabla f(x^{(k)})^T$ </p>
+</li>
+<li><p>搜索步长：最速下降法</p>
+</li>
+</ul>
+<p>线性搜索（一维搜索） 由此确定的步长为<strong>最优步长</strong></p>
+<p>使得目标函数值下降最多的$\lambda_k=argmin\;f(x^{(k)}-\lambda \nabla f(x^{(k)})^T)$ </p>
+<p>求解以$\lambda$为变量的一元函数$\phi(\lambda)=f(x^{(k)}-\lambda \nabla f(x^{(k)})^T)$的极小点$\lambda_k$</p>
+<h4 id="步骤-3"><a href="#步骤-3" class="headerlink" title="步骤"></a>步骤</h4><ul>
+<li>初始点$x^{(0)}\in R^n$精度$\epsilon&gt;0,k\leftarrow 0$</li>
+<li>若$||\nabla f(x^{(k)})||\leq \epsilon$  end. 解为$x^{(k)}$  or $d^{(k)}=-\nabla f(x^{(k)})$</li>
+<li>线性搜索确定步长$\lambda_k=argmin\;f(x^{(k)}-\lambda \nabla f(x^{(k)})^T)$</li>
+<li>令 $x^{(k+1)}=x^{(k)}+\lambda_k d^{(k)},k=k+1$   $\to $ 步骤② </li>
+</ul>
+<h4 id="性质"><a href="#性质" class="headerlink" title="性质"></a>性质</h4><ul>
+<li>如果目标函数等值线为同心圆或同心球面，则负梯度方向指向圆心或球心，从任意初始点一步可达极小值点</li>
+<li>$x$处负梯度方向仅为$x$点附近有最速下降性</li>
+<li>对于二元二次函数，等值线为椭圆，使用最速下降法搜索路径呈直角锯齿状</li>
+</ul>
+<h3 id="3-牛顿法"><a href="#3-牛顿法" class="headerlink" title="3 牛顿法"></a>3 牛顿法</h3><p><strong>给二次可微函数寻找其一阶微分等于零的驻点</strong></p>
+<ul>
+<li>搜索方向：牛顿方向</li>
+<li>搜索步长：最佳步长 $\lambda_k=argminf(x^{(k)}+\lambda d^{(k)})$</li>
+</ul>
+<p>若$f(x)$有二阶连续偏导数，$x^{(k)}$为其极小点的某一近似，做$f(x^{(k)})$的二阶泰勒展开</p>
+<p>$f(x)\approx f(x^{(k)})+\nabla f(x^{(k)})^T \Delta(x)+\frac12 \Delta(x)^TH(x^{(k)})\Delta(x)$</p>
+<p>$\Delta(x)=x-x^{(k)}$</p>
+<p>极值点梯度满足$\nabla f(x)\approx \nabla f(x^{(k)})+H(x^{(k)})\Delta(x)=0$</p>
+<p>$\therefore x=x^{(k)}-H(x^{(k)})^{-1}\nabla f(x^{(k)})$</p>
+<p>当$f(x)$为二次函数，从任一点$x^{(k)}$出发只需一步即可求出极小点</p>
+<h4 id="牛顿方向"><a href="#牛顿方向" class="headerlink" title="牛顿方向"></a>牛顿方向</h4><p>$d^{(k)}=-H(x^{(k)})^{-1}\nabla f(x^{(k)})$ 为搜索方向，即牛顿方向</p>
+<h4 id="步骤-4"><a href="#步骤-4" class="headerlink" title="步骤"></a>步骤</h4><ul>
+<li><p>初始点$x^{(0)}\in R^n$精度$\epsilon&gt;0,k\leftarrow 0$</p>
+</li>
+<li><p>若$||\nabla f(x^{(k)})||\leq \epsilon$  end. 解为$x^{(k)}$  or 计算</p>
+<p>$\nabla f(x^{(k)})+H(x^{(k)})^{-1}d^{(k)}=0$   得</p>
+<p>$d^{(k)}=-H(x^{(k)})^{-1}\nabla f(x^{(k)})$</p>
+</li>
+<li><p>线性搜索确定步长$\lambda_k=argmin\;f(x^{(k)}-\lambda H(x^{(k)})^{-1}\nabla f(x^{(k)}))$</p>
+</li>
+<li><p>令 $x^{(k+1)}=x^{(k)}+\lambda_k d^{(k)},k=k+1$   $\to $ 步骤② </p>
+</li>
+</ul>
+<h3 id="3-拟牛顿法"><a href="#3-拟牛顿法" class="headerlink" title="3 拟牛顿法"></a>3 拟牛顿法</h3><p>构造一个矩阵$B^{(k)}$, 用它逼近矩阵$H(x^{(k)})$，就可以不计算$H(x^{(k)})$，其<strong>逆矩阵</strong>$\overline{H}^{(k)}$ 可以y逼近$H(x^{(k)})^{-1}$</p>
+<p>近似矩阵$B^{(k)}$满足</p>
+<ul>
+<li>某种意义上$B^{(k)}\approx H(x^{(k)})$ ，拟牛顿方向是牛顿方向的近似</li>
+<li>所有$B^{(k)}$对称正定，保证算法产生方向为$x^{(k)}$处下降方向</li>
+<li>矩阵$B^{(k)}$容易计算</li>
+</ul>
+<h4 id="拟牛顿条件"><a href="#拟牛顿条件" class="headerlink" title="拟牛顿条件"></a>拟牛顿条件</h4><p>若$f(x)$有二阶连续偏导数，$x^{(k+1)}$为其极小点的某一近似，作$f(x^{(k+1)})$的二阶泰勒展开得</p>
+<p>$f(x)\approx f(x^{(k+1)})+\nabla f(x^{(k+1)})^T(x-x^{(k+1)})+\frac12 (x-x^{(k+1)})^TH(x^{(k+1)})(x-x^{(k+1)})$</p>
+<p>$\implies \nabla f(x)\approx \nabla f(x^{(k+1)})+H(x^{(k+1)})(x-x^{(k+1)})$</p>
+<p>当$x=x^{(k)}$时</p>
+<p>$\nabla f(x^{(k)}) \approx f(x^{(k+1)})+H(x^{(k+1)})(x^{(k)}-x^{(k+1)})$</p>
+<p>【$B^{(k+1)}$的合理逼近是当用$B^{(k+1)}$替换$H(x^{(k+1)})$时取等号】</p>
+<p>$B^{(k+1)}(x^{(k+1)}-x^{(k)})=\nabla f(x^{(k+1)})-\nabla f(x^{(k)})$</p>
+<p><strong>拟牛顿方程（割线方程）</strong>     $B^{(k)}s^{(k)}=y^{(k)}$</p>
+<p>其中$s^{(k)}=x^{(k+1)}-x^{(k)},y^{(k)}=\nabla f(x^{(k+1)})-\nabla f(x^{(k)})$</p>
+<p>$\implies \overline{H}^{(k+1)}y^{(k)}=s^{(k)}$</p>
+<p>$s^{(k)}=x^{(k+1)}-x^{(k)}=\lambda_kd^{(k)}$ 说明$B^{(k+1)}$与$H(x^{(k)})$沿$d^{(k)}$方向近似</p>
+<p>即拟牛顿方程规定的拟牛顿方向是牛顿方向的一个近似</p>
+<h4 id="1-DFP"><a href="#1-DFP" class="headerlink" title="1.DFP"></a>1.DFP</h4><p><strong>逼近逆矩阵</strong></p>
+<p>构造一个矩阵逼近Hessian矩阵，其逆矩阵可逼近Hessian矩阵逆矩阵</p>
+<p>$B^{(k)} \approx H(x^{(k)})$</p>
+<p>对$\overline{H}(x^{(k)})$做轻微的扰动以产生$\overline{H}(x^{(k+1)})$</p>
+<p> $\overline{H}^{(k+1)}=\overline{H}^{(k)}+\Delta \overline{H}^{(k)}$</p>
+<p>由于$\Delta \overline{H}(x^{(k)})$为对称矩阵，则设</p>
+<p>$\Delta \overline{H}^{(k)}=\alpha_kuu^T+\beta_kvv^T$</p>
+<p>代入$\overline{H}^{(k+1)}y^{(k)}=s^{(k)}$</p>
+<p>$\overline{H}^{(k)}y^{(k)}+\alpha_kuu^Ty^{(k)}+\beta_kvv^Ty^{(k)}=s^{(k)}$</p>
+<p>由于$u^Ty^{(k)}$和$v^Ty^{(k)}$均为常数</p>
+<p>$\implies \alpha_k(u^Ty^{(k)})u+\beta_k(v^Ty^{(k)})v=s^{(k)}-\overline{H}^{(k)}y^{(k)}$</p>
+<p>由于很难求解到唯一解，因此对于求解$u,v$ </p>
+<p>令$u=s^{(k)},v=\overline{H}^{(k)}y^{(k)}$</p>
+<p>得$\alpha_k((s^{(k)})^Ty^{(k)})s^{(k)}+\beta_k((y^{(k)})^T\overline{H}^{(k)}y^{(k)})\overline{H}^{(k)}y^{(k)}=s^{(k)}-\overline{H}^{(k)}y^{(k)}$</p>
+<p>解得$\alpha_k=\frac1{(y^{(k)})^Ts^{(k)}},\beta_k=\frac1{(y^{(k)})^T \overline{H}^{(k)}y^{(k)}}$</p>
+<p>则迭代方程为 $\overline{H}^{(k+1)}$   $=\overline{H}^{(k)}+\Delta \overline{H}^{(k)}\\=\overline{H}^{(k)}+\frac{s^{(k)}(s^{(k)})^T}{(y^{(k)})^Ts^{(k)}}-\frac{\overline{H}^{(k)}y^{(k)}(y^{(k)})^T\overline{H}^{(k)}}{(y^{(k)})^T\overline{H}^{(k)}y^{(k)}}$</p>
+<p>【保证 $\overline{H}^{(0)}$ 对称正定, 则之后迭代构造出的所有矩阵均对称正定】</p>
+<h5 id="步骤-5"><a href="#步骤-5" class="headerlink" title="步骤"></a>步骤</h5><ul>
+<li><p>给定初始点$x^{(0)}\in R^n$,精度$\epsilon &gt;0,k\leftarrow 0$</p>
+</li>
+<li><p>若$||\nabla f(x^{(k)})||\leq \epsilon$  end. 解为$x^{(k)}$  or 计算</p>
+<p>$\overline{H}^{(k)} = \begin{cases} 1&amp; \text{k=0} \ \overline{H}^{(k-1)}+\frac{s^{(k-1)}(s^{(k-1)})^T}{(y^{(k-1)})^Ts^{(k-1)}}-\frac{\overline{H}^{(k-1)}y^{(k-1)}(y^{(k-1)})^T\overline{H}^{(k-1)}}{(y^{(k-1)})^T\overline{H}^{(k-1)}y^{(k-1)}} &amp; \text{k&gt;0} \end{cases}$</p>
+<p>求得$d^{(k)}=-\overline{H}^{(k)}\nabla f(x^{(k)})$</p>
+</li>
+<li><p>线性搜索确定步长$\lambda_k=argmin\;f(x^{(k)}-\lambda \overline{H}(x^{(k)})\nabla f(x^{(k)}))$</p>
+</li>
+<li><p>令 $x^{(k+1)}=x^{(k)}+\lambda_k d^{(k)},k=k+1$   $\to $ 步骤② </p>
+</li>
+</ul>
+<h4 id="2-BFGS"><a href="#2-BFGS" class="headerlink" title="2.BFGS"></a>2.BFGS</h4><p><strong>逼近Hessian矩阵</strong></p>
+<p>通过产生$B^{(k+1)}$来找对应的逆矩阵</p>
+<p>$B^{(k+1)}=B^{(k)}+\Delta B^{(k)}$</p>
+<p>由于$\Delta B(x^{(k)})$为对称矩阵，则设</p>
+<p>$\Delta B^{(k)}=\alpha_kuu^T+\beta_kvv^T$</p>
+<p>代入 $B^{(k)}s^{(k)}=y^{(k)}$ 得</p>
+<p>$B^{(k)}s^{(k)}+\alpha_kuu^Ts^{(k)}+\beta_kvv^Ts^{(k)}=y^{(k)}$</p>
+<p>由于$u^Ts^{(k)}$和$v^Ts^{(k)}$均为常数</p>
+<p>$\implies \alpha_k(u^Ts^{(k)})u+\beta_k(v^Ts^{(k)})v=y^{(k)}-B^{(k)}s^{(k)}$</p>
+<p>同样由于很难求解到唯一解，因此对于求解$u,v$ </p>
+<p>令$u=y^{(k)},v=B^{(k)}s^{(k)}$</p>
+<p>得$\alpha_k((y^{(k)})^Ts^{(k)})y^{(k)}+\beta_k((s^{(k)})^TB^{(k)}s^{(k)})B^{(k)}s^{(k)}=y^{(k)}-B^{(k)}s^{(k)}$</p>
+<p>解得$\alpha_k=\frac1{(y^{(k)})^Ts^{(k)}},\beta_k=\frac1{(s^{(k)})^T B^{(k)}s^{(k)}}$</p>
+<p>则迭代方程为 $B^{(k+1)}$   $=B^{(k)}+\Delta B^{(k)}\\=B^{(k)}+\frac{y^{(k)}(y^{(k)})^T}{(y^{(k)})^Ts^{(k)}}-\frac{B^{(k)}s^{(k)}(s^{(k)})^TB^{(k)}}{(s^{(k)})^TB^{(k)}s^{(k)}}$</p>
+<h5 id="步骤-6"><a href="#步骤-6" class="headerlink" title="步骤"></a>步骤</h5><ul>
+<li><p>给定初始点$x^{(0)}\in R^n$,精度$\epsilon &gt;0,k\leftarrow 0$</p>
+</li>
+<li><p>若$||\nabla f(x^{(k)})||\leq \epsilon$  end. 解为$x^{(k)}$  or 计算</p>
+<p>$B^{(k)} = \begin{cases} 1&amp; \text{k=0} \ B^{(k-1)}+\frac{y^{(k-1)}(y^{(k-1)})^T}{(y^{(k-1)})^Ts^{(k-1)}}-\frac{B^{(k-1)}s^{(k-1)}(s^{(k-1)})^TB^{(k-1)}}{(s^{(k-1)})^TB^{(k-1)}s^{(k-1)}} &amp; \text k \geq 1 \end{cases}$</p>
+<p>求得$d^{(k)}=-(B^{(k)})^{-1} \nabla f(x^{(k)})$</p>
+</li>
+<li><p>线性搜索确定步长$\lambda_k=argmin\;f(x^{(k)}-\lambda (B(x^{(k)})^{-1}\nabla f(x^{(k)}))$</p>
+</li>
+<li><p>令 $x^{(k+1)}=x^{(k)}+\lambda_k d^{(k)},k=k+1$   $\to $ 步骤② </p>
+</li>
+</ul>
+<h5 id="Sherman-Morrison公式"><a href="#Sherman-Morrison公式" class="headerlink" title="Sherman-Morrison公式"></a>Sherman-Morrison公式</h5><p>设$A\in R^n$为非奇异方阵，$u,v \in R^n$，若满足$1+v^TA^{-1}u \not= 0$ ，则矩阵$A+uv^T$非奇异，且其逆矩阵为$(A+uv^T)^{-1}=A^{-1}-\frac{A^{-1}uv^TA^{-1}}{1+v^TA^{-1}u}$</p>
+<p>由于 $B^{(k+1)}=B^{(k)}+\frac{y^{(k)}(y^{(k)})^T}{(y^{(k)})^Ts^{(k)}}-\frac{B^{(k)}s^{(k)}(s^{(k)})^TB^{(k)}}{(s^{(k)})^TB^{(k)}s^{(k)}}$</p>
+<p>连续使用两次$Sherman-Morrison$公式即可求得$B^{(k+1)}$的逆矩阵</p>
+<p>$\overline{H}^{(k+1)}$ $=(1-\frac{s^{(k)}(y^{(k)})^T}{(y^{(k)})^Ts^{(k)}})\overline{H}^{(k)}(1-\frac{s^{(k)}(y^{(k)})^T}{(y^{(k)})^Ts^{(k)}})+\frac{s^{(k)}(s^{(k)})^T}{(y^{(k)})^Ts^{(k)}}\\=\overline{H}^{(k)}+\frac{(s^{(k)}-\overline{H}^{(k)}y^{(k)})(s^{(k)})^T+s^{(k)}(s^{(k)}-\overline{H}^{(k)}y^{(k)})^T}{(y^{(k)})^Ts^{(k)}}-\frac{(s^{(k)}-\overline{H}^{(k)}y^{(k)})^Ty^{(k)}}{((y^{(k)})^Ts^{(k)})^2}s^{(k)}(s^{(k)})^T$</p>
+<p>其中$\overline{H}^{(k+1)}=(B^{(k+1)})^{-1},\overline{H}^{(k)}=(B^{(k)})^{-1}$</p>
+<h4 id="3-Broyden簇"><a href="#3-Broyden簇" class="headerlink" title="3.Broyden簇"></a>3.Broyden簇</h4><p>利用$DFP$算法和$BFGS$算法之间存在的对偶关系构造矩阵</p>
+<p>$B^{(k+1)}=\alpha_kB^{(k+1)}_{BFGS}+(1-\alpha_k)B^{(k+1)}_{DFP} \ H^{(k+1)}=\alpha_kH^{(k+1)}_{BFGS}+(1-\alpha_k)H^{(k+1)}_{DFP}$</p>
+</section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#convex optimization" >
+    <span class="tag-code">convex optimization</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/12/05/层次分析法-AHP/">
+        <span class="nav-arrow">← </span>
+        
+          层次分析法 AHP
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#最优化算法"><span class="toc-nav-text">最优化算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#下降算法"><span class="toc-nav-text">下降算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-下降迭代算法"><span class="toc-nav-text">1 下降迭代算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#步骤"><span class="toc-nav-text">步骤</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#线性搜索-一维搜索"><span class="toc-nav-text">线性搜索(一维搜索)</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#终止条件"><span class="toc-nav-text">终止条件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#收敛速度"><span class="toc-nav-text">收敛速度</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-Fabonacci"><span class="toc-nav-text">2 Fabonacci</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#步骤-1"><span class="toc-nav-text">步骤</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-0-168"><span class="toc-nav-text">3 0.168</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#步骤-2"><span class="toc-nav-text">步骤</span></a></li></ol></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#最优化算法-1"><span class="toc-nav-text">最优化算法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#无约束最优化问题"><span class="toc-nav-text">无约束最优化问题</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#负梯度方向"><span class="toc-nav-text">负梯度方向</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-近似最佳步长"><span class="toc-nav-text">1 近似最佳步长</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-最速下降法（梯度法）"><span class="toc-nav-text">2 最速下降法（梯度法）</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#步骤-3"><span class="toc-nav-text">步骤</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#性质"><span class="toc-nav-text">性质</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-牛顿法"><span class="toc-nav-text">3 牛顿法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#牛顿方向"><span class="toc-nav-text">牛顿方向</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#步骤-4"><span class="toc-nav-text">步骤</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-拟牛顿法"><span class="toc-nav-text">3 拟牛顿法</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#拟牛顿条件"><span class="toc-nav-text">拟牛顿条件</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#1-DFP"><span class="toc-nav-text">1.DFP</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#步骤-5"><span class="toc-nav-text">步骤</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#2-BFGS"><span class="toc-nav-text">2.BFGS</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#步骤-6"><span class="toc-nav-text">步骤</span></a></li><li class="toc-nav-item toc-nav-level-5"><a class="toc-nav-link" href="#Sherman-Morrison公式"><span class="toc-nav-text">Sherman-Morrison公式</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#3-Broyden簇"><span class="toc-nav-text">3.Broyden簇</span></a></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/12/19/最优化算法/';
+    var banner = 'undefined'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+  <script>
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+  </script>
+
+
+
+  <script>
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "最优化算法",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  </script>
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  <script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+</html>

@@ -1,139 +1,159 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <!-- hexo-inject:begin --><!-- hexo-inject:end --><!-- so meta -->
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="HandheldFriendly" content="True">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
-    <meta name="description" content="层次分析法 AHP ​        对于评价对象属性多样结构复杂的评价问题，难以简单采用定量或定性方法进行优化和评价。要建立多要素多层次的评价系统，采用定性与定量有机结合的方式分析复杂问题。 ​        美国运筹学家、匹兹堡大学教授T. L. 萨迪(T. L. Saaty)与20世纪70年代初提出了注明的AHP(Analytic Hierarchy Process, 解析递阶过程，意译为层">
-<meta property="og:type" content="article">
-<meta property="og:title" content="层次分析法 AHP">
-<meta property="og:url" content="http://yoursite.com/2019/12/05/层次分析法-AHP/index.html">
-<meta property="og:site_name" content="Yue">
-<meta property="og:description" content="层次分析法 AHP ​        对于评价对象属性多样结构复杂的评价问题，难以简单采用定量或定性方法进行优化和评价。要建立多要素多层次的评价系统，采用定性与定量有机结合的方式分析复杂问题。 ​        美国运筹学家、匹兹堡大学教授T. L. 萨迪(T. L. Saaty)与20世纪70年代初提出了注明的AHP(Analytic Hierarchy Process, 解析递阶过程，意译为层">
-<meta property="og:image" content="https://i.loli.net/2019/12/04/DWkL3PMeHZj7uOV.png">
-<meta property="og:image" content="https://i.loli.net/2019/12/05/HOkIpQLe7wq1RhB.png">
-<meta property="og:image" content="https://i.loli.net/2019/12/05/XBASpDIl9jbsNgh.png">
-<meta property="og:updated_time" content="2019-12-05T17:25:21.187Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="层次分析法 AHP">
-<meta name="twitter:description" content="层次分析法 AHP ​        对于评价对象属性多样结构复杂的评价问题，难以简单采用定量或定性方法进行优化和评价。要建立多要素多层次的评价系统，采用定性与定量有机结合的方式分析复杂问题。 ​        美国运筹学家、匹兹堡大学教授T. L. 萨迪(T. L. Saaty)与20世纪70年代初提出了注明的AHP(Analytic Hierarchy Process, 解析递阶过程，意译为层">
-<meta name="twitter:image" content="https://i.loli.net/2019/12/04/DWkL3PMeHZj7uOV.png">
+  <head>
+  <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Do what you want to do.">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
     
+      层次分析法 AHP | Yue
     
-        
-          
-              <link rel="shortcut icon" href="/images/favicon.ico">
-          
-        
-        
-          
-            <link rel="icon" type="image/png" href="/images/favicon-192x192.png" sizes="192x192">
-          
-        
-        
-          
-            <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
-          
-        
-    
-    <!-- title -->
-    <title>层次分析法 AHP</title>
-    <!-- styles -->
-    <link rel="stylesheet" href="/css/style.css">
-    <!-- rss --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
-    
-    
-</head>
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+    css('css/plugins/gitment.css')
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+    <script src="/js/qrious.js"></script>
+  
+  
+    <script src="/js/gitment.js"></script>
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
 
-<body>
-    
-      <!-- hexo-inject:begin --><!-- hexo-inject:end --><div id="header-post">
-  <a id="menu-icon" href="#"><i class="fa fa-bars fa-lg"></i></a>
-  <a id="menu-icon-tablet" href="#"><i class="fa fa-bars fa-lg"></i></a>
-  <a id="top-icon-tablet" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');" style="display:none;"><i class="fa fa-chevron-up fa-lg"></i></a>
-  <span id="menu">
-    <span id="nav">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/posts/">Writing</a></li>
-         
-          <li><a href="http://github.com/sergodeeva">Projects</a></li>
-        
-      </ul>
-    </span>
-    <br/>
-    <span id="actions">
-      <ul>
-        
-        
-        <li><a class="icon" href="/2018/12/01/Input-Output-redirection-and-Regular-expression/"><i class="fa fa-chevron-right" aria-hidden="true" onmouseover="$('#i-next').toggle();" onmouseout="$('#i-next').toggle();"></i></a></li>
-        
-        <li><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up" aria-hidden="true" onmouseover="$('#i-top').toggle();" onmouseout="$('#i-top').toggle();"></i></a></li>
-        <li><a class="icon" href="#"><i class="fa fa-share-alt" aria-hidden="true" onmouseover="$('#i-share').toggle();" onmouseout="$('#i-share').toggle();" onclick="$('#share').toggle();return false;"></i></a></li>
-      </ul>
-      <span id="i-prev" class="info" style="display:none;">Previous post</span>
-      <span id="i-next" class="info" style="display:none;">Next post</span>
-      <span id="i-top" class="info" style="display:none;">Back to top</span>
-      <span id="i-share" class="info" style="display:none;">Share post</span>
-    </span>
-    <br/>
-    <div id="share" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/05/层次分析法-AHP/"><i class="fa fa-facebook " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&text=层次分析法 AHP"><i class="fa fa-twitter " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-linkedin " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&is_video=false&description=层次分析法 AHP"><i class="fa fa-pinterest " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=层次分析法 AHP&body=Check out this article: http://yoursite.com/2019/12/05/层次分析法-AHP/"><i class="fa fa-envelope " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-get-pocket " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-reddit " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-stumbleupon " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-digg " aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&name=层次分析法 AHP&description="><i class="fa fa-tumblr " aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-    <div id="toc">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#层次分析法-AHP"><span class="toc-number">1.</span> <span class="toc-text">层次分析法 AHP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理与基本步骤"><span class="toc-number">1.1.</span> <span class="toc-text">原理与基本步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-建立评价模型"><span class="toc-number">1.1.1.</span> <span class="toc-text">1 建立评价模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-建立判断矩阵"><span class="toc-number">1.1.2.</span> <span class="toc-text">2 建立判断矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-重要度向量-W"><span class="toc-number">1.1.3.</span> <span class="toc-text">3 重要度向量$W$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-一致性检验"><span class="toc-number">1.1.4.</span> <span class="toc-text">4 一致性检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-层次总排序"><span class="toc-number">1.1.5.</span> <span class="toc-text">4 层次总排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算例"><span class="toc-number">1.2.</span> <span class="toc-text">算例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-完全相关结构"><span class="toc-number">1.2.1.</span> <span class="toc-text">1 完全相关结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-混合结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">2 混合结构</span></a></li></ol></li></ol></li></ol>
-    </div>
-  </span>
-</div>
-
-    
-    <div class="content index width mx-auto px2 my4">
-        
-        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
-  <header>
-    
-    <h1 class="posttitle" itemprop="name headline">
-        层次分析法 AHP
-    </h1>
-
-
-
-    <div class="meta">
-      <span class="author" itemprop="author" itemscope itemtype="http://schema.org/Person">
-        <span itemprop="name">Yue</span>
-      </span>
-      
-    <div class="postdate">
-        <time datetime="2019-12-05T15:37:13.000Z" itemprop="datePublished">2019-12-05</time>
-    </div>
-
-
-      
-
-    </div>
-  </header>
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
   
 
-  <div class="content" itemprop="articleBody">
-    <h1 id="层次分析法-AHP"><a href="#层次分析法-AHP" class="headerlink" title="层次分析法 AHP"></a>层次分析法 AHP</h1><blockquote>
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png" />
+</div>
+
+  <body>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <div class="logo"></div>
+      <span>Yue</span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/project/" class="item-link">Projects</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/project/" class="menu-link">Projects</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>层次分析法 AHP</h2>
+  <p class="post-date">2019-12-05</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="层次分析法-AHP"><a href="#层次分析法-AHP" class="headerlink" title="层次分析法 AHP"></a>层次分析法 AHP</h1><blockquote>
 <p>​        对于评价对象属性多样结构复杂的评价问题，难以简单采用定量或定性方法进行优化和评价。要建立多要素多层次的评价系统，采用定性与定量有机结合的方式分析复杂问题。</p>
 <p>​        美国运筹学家、匹兹堡大学教授T. L. 萨迪(T. L. Saaty)与20世纪70年代初提出了注明的AHP(Analytic Hierarchy Process, 解析递阶过程，意译为层次分析)方法。</p>
 </blockquote>
@@ -313,7 +333,7 @@
 <p>$W^{(k)}=(p^{(i)}q^{(m)},…)^T, \quad i=1,2,…n\quad j=1,2,…m \quad$ 第$k$层的$i$元素为第$k-1$层的$j$元素的子元素</p>
 <p>由此得到第$k-1$层相对于目标层的总权重</p>
 <h2 id="算例"><a href="#算例" class="headerlink" title="算例"></a>算例</h2><h3 id="1-完全相关结构"><a href="#1-完全相关结构" class="headerlink" title="1 完全相关结构"></a>1 完全相关结构</h3><p>以投资效果评价结构模型为例</p>
-<p><img src="https://i.loli.net/2019/12/04/DWkL3PMeHZj7uOV.png" alt="图1投资评价模型.png" style="zoom:50%;"></p>
+<p><img src="https://i.loli.net/2019/12/04/DWkL3PMeHZj7uOV.png" alt="图1投资评价模型.png" style="zoom:40%;"></p>
 <p>1.构建判断矩阵</p>
 <p>① $A$层</p>
 <div class="table-container">
@@ -634,9 +654,9 @@
 <p>由此得到方案层的权重为$W^{(C)}=(0.426,0.283,0.291)^T$</p>
 <p>结论：优劣顺序为：$C_1&gt;C_3&gt;C_2$ , 很明显 $C_1$为最优方案</p>
 <h3 id="2-混合结构"><a href="#2-混合结构" class="headerlink" title="2 混合结构"></a>2 混合结构</h3><p>如过河收益评价指标体系：</p>
-<p><img src="https://i.loli.net/2019/12/05/HOkIpQLe7wq1RhB.png" alt="图2过河收益评价.png" style="zoom:50%;"></p>
+<p><img src="https://i.loli.net/2019/12/05/HOkIpQLe7wq1RhB.png" alt="图2过河收益评价.png" style="zoom:30%;"></p>
 <p>以一简单算例为例计算，无具体实际含义</p>
-<p><img src="https://i.loli.net/2019/12/05/XBASpDIl9jbsNgh.png" alt="图4.png" style="zoom:50%;"></p>
+<p><img src="https://i.loli.net/2019/12/05/XBASpDIl9jbsNgh.png" alt="图4.png" style="zoom:30%;"></p>
 <p>1.构造判断矩阵</p>
 <p>① $A$层</p>
 <div class="table-container">
@@ -888,86 +908,223 @@
 <p>参考资料：</p>
 <p>[1] 汪应洛.系统工程.机械工业出版社</p>
 <p>[2] <a href="https://wiki.mbalib.com/wiki/%E5%B1%82%E6%AC%A1%E5%88%86%E6%9E%90%E6%B3%95" target="_blank" rel="noopener">层次分析法-MBA</a></p>
-
-  </div>
-</article>
-
-
-
-    </div>
+</section>
+    <!-- Tags START -->
     
-      <div id="footer-post-container">
-  <div id="footer-post">
-
-    <div id="nav-footer" style="display: none">
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/posts/">Writing</a></li>
-         
-          <li><a href="http://github.com/sergodeeva">Projects</a></li>
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2018/12/01/Input-Output-redirection-and-Regular-expression/">
+        <span class="nav-arrow">← </span>
         
-      </ul>
-    </div>
-
-    <div id="toc-footer" style="display: none">
-      <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#层次分析法-AHP"><span class="toc-number">1.</span> <span class="toc-text">层次分析法 AHP</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#原理与基本步骤"><span class="toc-number">1.1.</span> <span class="toc-text">原理与基本步骤</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-建立评价模型"><span class="toc-number">1.1.1.</span> <span class="toc-text">1 建立评价模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-建立判断矩阵"><span class="toc-number">1.1.2.</span> <span class="toc-text">2 建立判断矩阵</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-重要度向量-W"><span class="toc-number">1.1.3.</span> <span class="toc-text">3 重要度向量$W$</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-一致性检验"><span class="toc-number">1.1.4.</span> <span class="toc-text">4 一致性检验</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-层次总排序"><span class="toc-number">1.1.5.</span> <span class="toc-text">4 层次总排序</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算例"><span class="toc-number">1.2.</span> <span class="toc-text">算例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-完全相关结构"><span class="toc-number">1.2.1.</span> <span class="toc-text">1 完全相关结构</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-混合结构"><span class="toc-number">1.2.2.</span> <span class="toc-text">2 混合结构</span></a></li></ol></li></ol></li></ol>
-    </div>
-
-    <div id="share-footer" style="display: none">
-      <ul>
-  <li><a class="icon" href="http://www.facebook.com/sharer.php?u=http://yoursite.com/2019/12/05/层次分析法-AHP/"><i class="fa fa-facebook fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://twitter.com/share?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&text=层次分析法 AHP"><i class="fa fa-twitter fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.linkedin.com/shareArticle?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-linkedin fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://pinterest.com/pin/create/bookmarklet/?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&is_video=false&description=层次分析法 AHP"><i class="fa fa-pinterest fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="mailto:?subject=层次分析法 AHP&body=Check out this article: http://yoursite.com/2019/12/05/层次分析法-AHP/"><i class="fa fa-envelope fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="https://getpocket.com/save?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-get-pocket fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://reddit.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-reddit fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.stumbleupon.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-stumbleupon fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://digg.com/submit?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&title=层次分析法 AHP"><i class="fa fa-digg fa-lg" aria-hidden="true"></i></a></li>
-  <li><a class="icon" href="http://www.tumblr.com/share/link?url=http://yoursite.com/2019/12/05/层次分析法-AHP/&name=层次分析法 AHP&description="><i class="fa fa-tumblr fa-lg" aria-hidden="true"></i></a></li>
-</ul>
-
-    </div>
-
-    <div id="actions-footer">
-      <ul>
-        <li id="toc"><a class="icon" href="#" onclick="$('#toc-footer').toggle();return false;"><i class="fa fa-list fa-lg" aria-hidden="true"></i> TOC</a></li>
-        <li id="share"><a class="icon" href="#" onclick="$('#share-footer').toggle();return false;"><i class="fa fa-share-alt fa-lg" aria-hidden="true"></i> Share</a></li>
-        <li id="top" style="display:none"><a class="icon" href="#" onclick="$('html, body').animate({ scrollTop: 0 }, 'fast');"><i class="fa fa-chevron-up fa-lg" aria-hidden="true"></i> Top</a></li>
-        <li id="menu"><a class="icon" href="#" onclick="$('#nav-footer').toggle();return false;"><i class="fa fa-bars fa-lg" aria-hidden="true"></i> Menu</a></li>
-      </ul>
-    </div>
-
+          Input/Output redirection and Regular expression
+        
+      </a>
+    
+    
+      <a class="nav-right" href="/2019/12/19/最优化算法/">
+        
+          最优化算法
+        
+        <span class="nav-arrow"> →</span>
+      </a>
+    
   </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+    
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+    
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#层次分析法-AHP"><span class="toc-nav-text">层次分析法 AHP</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#原理与基本步骤"><span class="toc-nav-text">原理与基本步骤</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-建立评价模型"><span class="toc-nav-text">1 建立评价模型</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-建立判断矩阵"><span class="toc-nav-text">2 建立判断矩阵</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#3-重要度向量-W"><span class="toc-nav-text">3 重要度向量$W$</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-一致性检验"><span class="toc-nav-text">4 一致性检验</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#4-层次总排序"><span class="toc-nav-text">4 层次总排序</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#算例"><span class="toc-nav-text">算例</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#1-完全相关结构"><span class="toc-nav-text">1 完全相关结构</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#2-混合结构"><span class="toc-nav-text">2 混合结构</span></a></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/12/05/层次分析法-AHP/';
+    var banner = 'undefined'
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+  <script>
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+  </script>
+
+
+
+  <script>
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "层次分析法 AHP",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  </script>
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
 </div>
-
-    
-    <footer id="footer">
-  <div class="footer-left">
-    Copyright &copy; 2019 Yue
-  </div>
-  <div class="footer-right">
-    <nav>
-      <ul>
-         
-          <li><a href="/">Home</a></li>
-         
-          <li><a href="/about/">About</a></li>
-         
-          <li><a href="/posts/">Writing</a></li>
-         
-          <li><a href="http://github.com/sergodeeva">Projects</a></li>
-        
-      </ul>
-    </nav>
-  </div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
 </footer>
 
-<script type="text/x-mathjax-config">
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  <script type="text/x-mathjax-config">
     MathJax.Hub.Config({
         tex2jax: {
             inlineMath: [ ["$","$"], ["\\(","\\)"] ],
@@ -984,26 +1141,3 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 </html>
-<!-- styles -->
-<link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css">
-<link rel="stylesheet" href="/lib/meslo-LG/styles.css">
-<link rel="stylesheet" href="/lib/justified-gallery/justifiedGallery.min.css">
-
-<!-- jquery -->
-<script src="/lib/jquery/jquery.min.js"></script>
-<script src="/lib/justified-gallery/jquery.justifiedGallery.min.js"></script>
-<script src="/js/main.js"></script>
-
-
-    <!-- Google Analytics -->
-    <script type="text/javascript">
-        (function(i,s,o,g,r,a,m) {i['GoogleAnalyticsObject']=r;i[r]=i[r]||function() {
-        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
-        ga('create', 'UA-37473492-6', 'auto');
-        ga('send', 'pageview');
-    </script>
-
-
-
